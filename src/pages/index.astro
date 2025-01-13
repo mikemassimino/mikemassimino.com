@@ -1,11 +1,78 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Variables for dynamic content
+const heroTagline = "Astronaut. Professor. Media Personality. Author. Speaker. Explorer.";
+const shortBio = "A brief bio introducing who he is and his background, emphasizing that he is more than just an astronaut.";
+const heroImage = "/path/to/photo.jpg";
+
+// Featured sections
+const featuredSections = [
+  {
+    title: "Books",
+    description: "Discover my latest books on space, exploration, and leadership.",
+    link: "/books",
+    linkText: "View Books",
+  },
+  {
+    title: "Media Appearances",
+    description: "Watch interviews and appearances on major networks.",
+    link: "/media",
+    linkText: "Explore Media",
+  },
+  {
+    title: "Speaking Engagements",
+    description: "Book me for inspirational talks and conferences.",
+    link: "/speaking",
+    linkText: "Learn More",
+  },
+];
+
+// Social media links
+const socialLinks = [
+  { name: "Twitter", url: "https://twitter.com" },
+  { name: "LinkedIn", url: "https://linkedin.com" },
+  { name: "YouTube", url: "https://youtube.com" },
+];
 ---
+<BaseLayout>
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gradient-to-r from-blue-800 to-purple-800">
+    <h1 class="text-5xl font-bold mb-4">[Name]</h1>
+    <p class="text-2xl italic">{heroTagline}</p>
+    <div class="mt-6">
+      <a href="/contact" class="bg-white text-blue-900 px-4 py-2 rounded shadow mr-4">Contact</a>
+      <a href="/bio" class="bg-white text-blue-900 px-4 py-2 rounded shadow">Full Bio</a>
+    </div>
+  </section>
 
-<Layout>
-	<Welcome />
-</Layout>
+  <!-- Short Bio & Photo -->
+  <section class="flex items-center justify-between my-12">
+    <div class="w-1/2">
+      <h2 class="text-3xl font-bold mb-4">About Me</h2>
+      <p>{shortBio}</p>
+    </div>
+    <img src={heroImage} alt="Photo of [Name]" class="w-1/3 rounded-lg shadow" />
+  </section>
+
+  <!-- Featured Content -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {featuredSections.map((section) => (
+      <div class="p-4 bg-gray-800 rounded" key={section.title}>
+        <h3 class="text-xl font-bold">{section.title}</h3>
+        <p>{section.description}</p>
+        <a href={section.link} class="text-blue-400 hover:underline">{section.linkText}</a>
+      </div>
+    ))}
+  </section>
+
+  <!-- Social Media -->
+  <section class="text-center my-12">
+    <h3 class="text-2xl font-bold mb-4">Connect with Me</h3>
+    <div class="flex justify-center space-x-4">
+      {socialLinks.map((social) => (
+        <a href={social.url} target="_blank" class="text-blue-400 hover:underline" key={social.name}>{social.name}</a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
