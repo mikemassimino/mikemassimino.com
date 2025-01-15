@@ -1,24 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const heroText = "Astronanut. Columbia Professor. Media Personality. Bestselling author. Explorer.";
+const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling author. Explorer.";
 ---
 
 <BaseLayout pageTitle="Home">
   <!-- Hero Section -->
-  <section class="relative grid grid-cols-12 bg-gradient-to-r from-[#020024] via-[#07498B] to-[#00D4FF]">
-    <h2 class="col-span-12 text-center capitalize mt-9 text-white text-2xl">{heroText}</h2>
+  <section class="relative grid grid-cols-8 grid-rows-hero gap-y-5 bg-hero-gradient bg-cover items-center">
+    <h2 class="col-span-8 row-span-2 text-center capitalize mt-8 text-white text-header font-exo leading-10">
+      {heroText}
+    </h2>
 
-    <div class="col-span-12 flex justify-center">
-      <p>BUTTON</p>
+    <div class="col-span-4 col-start-4 row-start-3 row-span-1 align-middle mt-12">
+      <div class="flex text-center justify-center bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] rounded-2xl text-white font-reddit text-[20px]">SPEAKING INFORMATION</div>
     </div>
 
-    <div class="col-span-6">
-      <img src="src/assets/spaceman(1).png" alt="Mike Massimino headshot." />
+    <div class="col-span-4 col-start-5 row-span-1 row-start-4 z-10">
+      <h3 class="text-white font-jost text-[36px] leading-[2.8rem]">Mike Massimino</h3>
     </div>
 
-    <div class="translate-y-12">
-      <h3 class="text-white">Mike Massimino</h3>
+    <div class="col-span-5 row-span-2 col-start-1 row-start-5 -mb-24 relative">
+      <img
+        src="src/assets/spaceman(1).png"
+        alt="Mike Massimino headshot."
+        class="absolute bottom-0 left-0 object-cover w-full max-w-96 md:w-max-w-3xl"
+      />
     </div>
   </section>
 
