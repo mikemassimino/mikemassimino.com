@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import GradientButton from "../components/GradientButton.astro";
+import OutlinedButton from "../components/OutlinedButton.astro";
+
 import { Content as MeetMike } from "../meet_astro_mike.md";
 
 const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling author. Explorer.";
@@ -14,11 +17,7 @@ const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling 
     </h2>
 
     <div class="col-span-4 col-start-4 row-start-3 row-span-1 align-middle mt-12">
-      <div
-        class="flex text-center justify-center bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] rounded-2xl text-white font-reddit text-[20px]"
-      >
-        SPEAKING INFORMATION
-      </div>
+      <GradientButton link="/" text="SPEAKING INFORMATION" />
     </div>
 
     <div class="col-span-4 col-start-5 row-span-1 row-start-4 z-10">
@@ -35,11 +34,25 @@ const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling 
   </section>
 
   <!-- Meet Astro Mike -->
-  <section class="mx-5 mt-5">
-    <h2 class="font-exo text-header col-span-full text-red">Meet Astro Mike</h2>
+  <section class="flex flex-col md:flex-row mx-5 mt-5 md:gap-5 md:items-center">
+    <div class="flex-1 md:w-1/2">
+      <h2 class="font-exo text-header col-span-full text-red md:mb-3">Meet Astro Mike</h2>
 
-    <div class="space-y-6 text-gray text-body font-['Roboto']">
-      <MeetMike class="col-span-full" />
+      <div class="space-y-6 text-gray text-body font-['Roboto']">
+        <MeetMike class="col-span-full" />
+      </div>
+    </div>
+
+    <div class="flex flex-row md:flex-col w-full md:w-1/2 items-center outline outline-red gap-[12px] mt-5">
+      <div class="w-1/2 md:w-full">
+        <img src="src/assets/mike/image 8.png" class="outline outline-red" />
+      </div>
+
+      <!-- Buttons container -->
+      <div class="flex flex-col gap-3 outline outline-red w-1/2">
+        <GradientButton link="/" text="CONTACT MIKE" />
+        <OutlinedButton link="/" text="FULL BIO" />
+      </div>
     </div>
   </section>
 

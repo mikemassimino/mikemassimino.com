@@ -4,10 +4,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     colors: {
-      'black': '#000000',
-      'white': '#FFFFFF',
-      'gray': '#5F5F5F',
-      'red': '#E0383E'
+      black: "#000000",
+      white: "#FFFFFF",
+      gray: "#5F5F5F",
+      red: "#E0383E",
+      yellow: "#F0CB78",
     },
     extend: {
       backgroundImage: {
@@ -15,7 +16,7 @@ export default {
       },
       fontSize: {
         header: "2rem",
-        'body': "0.875rem",
+        body: "0.875rem",
       },
       fontFamily: {
         exo: ['"Exo 2 Variable"'],
@@ -23,8 +24,8 @@ export default {
         jost: ['"Jost Variable"'],
       },
       gridTemplateRows: {
-        'hero': 'repeat(5, minmax(80px, auto));'
-      }
+        hero: "repeat(5, minmax(80px, auto));",
+      },
     },
   },
   plugins: [],
