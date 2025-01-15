@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import { Content as MeetMike } from "../meet_astro_mike.md";
+
 const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling author. Explorer.";
 ---
 
@@ -12,7 +14,11 @@ const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling 
     </h2>
 
     <div class="col-span-4 col-start-4 row-start-3 row-span-1 align-middle mt-12">
-      <div class="flex text-center justify-center bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] rounded-2xl text-white font-reddit text-[20px]">SPEAKING INFORMATION</div>
+      <div
+        class="flex text-center justify-center bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] rounded-2xl text-white font-reddit text-[20px]"
+      >
+        SPEAKING INFORMATION
+      </div>
     </div>
 
     <div class="col-span-4 col-start-5 row-span-1 row-start-4 z-10">
@@ -21,10 +27,19 @@ const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling 
 
     <div class="col-span-5 row-span-2 col-start-1 row-start-5 -mb-24 relative">
       <img
-        src="src/assets/spaceman(1).png"
+        src="src/assets/mike/spaceman_cutout.png"
         alt="Mike Massimino headshot."
         class="absolute bottom-0 left-0 object-cover w-full max-w-96 md:w-max-w-3xl"
       />
+    </div>
+  </section>
+
+  <!-- Meet Astro Mike -->
+  <section class="mx-5 mt-5">
+    <h2 class="font-exo text-header col-span-full text-red">Meet Astro Mike</h2>
+
+    <div class="space-y-6 text-gray text-body font-['Roboto']">
+      <MeetMike class="col-span-full" />
     </div>
   </section>
 
