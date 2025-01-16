@@ -1,13 +1,8 @@
 ---
 const currentPath = Astro.url.pathname;
 
-const navigationLinks = [
-  ["Home", "/"],
-  ["Biography", "/about"],
-  ["Books", "/books"],
-  ["Media", "/media"],
-  ["Speaking", "/speaking"],
-];
+import { navigationLinks } from '../config/navigationLinks.mjs';
+
 ---
 
 <!-- Hamburger menu (visible on small screens) -->
