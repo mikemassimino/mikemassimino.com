@@ -6,11 +6,18 @@ export default {
     colors: {
       black: "#000000",
       white: "#FFFFFF",
+      dimwhite: "#F3F2F2",
       gray: "#5F5F5F",
+      gray2: "#171717",
       red: "#E0383E",
       yellow: "#F0CB78",
+      blue: "#083D87",
+      orange: "#E79F5A",
     },
     extend: {
+      // screens: {
+      //   md: "790px",
+      // },
       backgroundImage: {
         "hero-gradient": "url('src/assets/Frame 1.svg')",
       },

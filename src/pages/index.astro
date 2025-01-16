@@ -11,87 +11,128 @@ const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling 
 
 <BaseLayout pageTitle="Home">
   <!-- Hero Section -->
-  <section class="relative grid grid-cols-8 grid-rows-hero gap-y-5 bg-hero-gradient bg-cover items-center">
-    <h2 class="col-span-8 row-span-2 text-center capitalize mt-8 text-white text-header font-exo leading-10">
+  <section
+    class="relative grid grid-cols-8 grid-rows-hero gap-y-5 bg-hero-gradient bg-cover items-center
+                  lg:min-h-[400px] lg:pt-8"
+  >
+    <h2
+      class="col-span-8 row-span-2 text-center capitalize mt-8 text-white text-header font-exo leading-10
+             lg:max-w-3xl lg:col-start-4 lg:row-start-2 lg:text-4xl lg:mr-8"
+    >
       {heroText}
     </h2>
 
-    <div class="col-span-4 col-start-4 row-start-3 row-span-1 align-middle mt-12">
+    <div
+      class="col-span-4 col-start-4 row-start-3 row-span-1 align-middle mt-12 max-w-fit
+                lg:col-start-5 lg:row-start-4 lg:col-span-3 lg:mt-0"
+    >
       <GradientButton link="/" text="SPEAKING INFORMATION" />
     </div>
 
-    <div class="col-span-4 col-start-5 row-span-1 row-start-4 z-10">
-      <h3 class="text-white font-jost text-[36px] leading-[2.8rem]">Mike Massimino</h3>
+    <div
+      class="col-span-4 col-start-5 row-span-1 row-start-4 z-10
+                lg:absolute lg:left-20 lg:col-start-1 lg:row-start-2 lg:mb-40"
+    >
+      <h3 class="text-white font-jost text-[36px] lg:text-6xl leading-[2.8rem]">Mike Massimino</h3>
     </div>
 
-    <div class="col-span-5 row-span-2 col-start-1 row-start-5 -mb-24 relative">
+    <div class="col-span-5 row-span-2 col-start-1 row-start-5 -mb-24 relative
+                lg:ml-24">
       <img
         src="src/assets/mike/spaceman_cutout.png"
         alt="Mike Massimino headshot."
-        class="absolute bottom-0 left-0 object-cover w-full max-w-96 md:w-max-w-3xl"
+        class="absolute bottom-0 left-0 object-cover w-full max-w-96 lg:w-max-w-3xl"
       />
     </div>
   </section>
 
   <!-- Meet Astro Mike -->
-  <section class="flex flex-col md:flex-row mx-5 mt-5 md:gap-5 md:items-center">
-    <div class="flex-1 md:w-1/2">
-      <h2 class="font-exo text-header col-span-full text-red md:mb-3">Meet Astro Mike</h2>
+  <section class="flex flex-col lg:flex-row mx-5 mt-5 mb-14 lg:max-w-5xl lg:gap-12 lg:items-center lg:mx-auto">
+    <div class="flex-1 lg:w-1/2">
+      <h2 class="font-exo text-header col-span-full text-red lg:mb-3">Meet Astro Mike</h2>
 
-      <div class="space-y-6 text-gray text-body font-['Roboto']">
+      <div class="space-y-4 text-gray text-body font-['Roboto'] lg:text-lg">
         <MeetMike class="col-span-full" />
       </div>
     </div>
 
-    <div class="flex flex-row md:flex-col w-full md:w-1/2 items-center outline outline-red gap-[12px] mt-5">
-      <div class="w-1/2 md:w-full">
-        <img src="src/assets/mike/image 8.png" class="outline outline-red" />
+    <div class="flex flex-row lg:flex-col w-full lg:w-1/2 items-center gap-[12px] mt-5">
+      <div class="w-1/2 lg:w-full">
+        <img src="src/assets/mike/image 8.png" class="" />
       </div>
 
       <!-- Buttons container -->
-      <div class="flex flex-col gap-3 outline outline-red w-1/2">
+      <div class="flex flex-col gap-3 w-1/2 lg:w-full lg:max-w-sm">
         <GradientButton link="/" text="CONTACT MIKE" />
         <OutlinedButton link="/" text="FULL BIO" />
       </div>
     </div>
   </section>
 
-  <!-- <section class="text-center py-20 bg-gradient-to-r from-blue-800 to-purple-800">
-    <h1 class="text-5xl font-bold mb-4">[Name]</h1>
-    <p class="text-2xl italic">{heroTagline}</p>
-    <div class="mt-6">
-      <a href="/contact" class="bg-white text-blue-900 px-4 py-2 rounded shadow mr-4">Contact</a>
-      <a href="/bio" class="bg-white text-blue-900 px-4 py-2 rounded shadow">Full Bio</a>
-    </div>
-  </section> -->
+  <!-- Content -->
+  <section class="bg-gradient-to-l from-[#2D9EE0] via-[#2E8FE7] to-[#091E3A] py-8">
+    <div class="container mx-auto max-w-96 space-y-8">
+      <div class="container shadow-lg">
+        <!-- Images -->
+        <div class="flex flex-row">
+          <img src="src/assets/books/moonshot_cover.png" class="w-1/2 rounded-tl-3xl" />
+          <img src="src/assets/books/cover2.jpg" class="w-1/2 rounded-tr-3xl" />
+        </div>
 
-  <!-- Short Bio & Photo -->
-  <!-- <section class="flex items-center justify-between my-12">
-    <div class="w-1/2">
-      <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <p>{shortBio}</p>
-    </div>
-    <img src={heroImage} alt="Photo of [Name]" class="w-1/3 rounded-lg shadow" />
-  </section> -->
-
-  <!-- Featured Content -->
-  <!-- <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    {featuredSections.map((section) => (
-      <div class="p-4 bg-gray-800 rounded" key={section.title}>
-        <h3 class="text-xl font-bold">{section.title}</h3>
-        <p>{section.description}</p>
-        <a href={section.link} class="text-blue-400 hover:underline">{section.linkText}</a>
+        <!-- Body -->
+        <div class="bg-orange rounded-b-3xl p-4">
+          <h3 class="text-white text-center font-jost text-xl mb-2">New York Times Bestselling Author</h3>
+          <p class="text-dimwhite text-center font-['Roboto']">
+            Mike is a New York Times Bestselling author. Check out his books: Moonshot, Spaceman, and Spaceman (Adapted
+            for Young Readers).
+          </p>
+          <a href="/" class="">
+            <div
+              class="mx-auto mt-4 flex text-center w-40 rounded-2xl justify-center bg-blue text-white font-['Roboto'] text-md px-1 py-1"
+            >
+              Check out Mike's Books
+            </div>
+          </a>
+        </div>
       </div>
-    ))}
-  </section> -->
+      <div class="container shadow-lg flex flex-row">
+        <!-- Images -->
+        <img src="src/assets/books/moonshot_cover.png" class="w-1/2 aspect-square object-cover rounded-l-3xl flex" />
 
-  <!-- Social Media -->
-  <!-- <section class="text-center my-12">
-    <h3 class="text-2xl font-bold mb-4">Connect with Me</h3>
-    <div class="flex justify-center space-x-4">
-      {socialLinks.map((social) => (
-        <a href={social.url} target="_blank" class="text-blue-400 hover:underline" key={social.name}>{social.name}</a>
-      ))}
+        <!-- Body -->
+        <div class="bg-gray2 rounded-r-3xl p-3 w-1/2">
+          <h3 class="text-white text-left font-jost text-xl mb-2">TV & Movies</h3>
+          <p class="text-dimwhite text-left font-['Roboto']">
+            Mike has been featured in many hit shows, including The Big Bang Theory.
+          </p>
+          <a href="/" class="">
+            <div
+              class="mx-auto mt-4 flex text-center w-40 rounded-2xl justify-center bg-gray text-white font-['Roboto'] text-md px-1 py-1"
+            >
+              Watch Mike's Features
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="container shadow-lg flex flex-row">
+        <!-- Images -->
+        <img src="src/assets/books/moonshot_cover.png" class="w-1/2 aspect-square object-cover rounded-l-3xl flex" />
+
+        <!-- Body -->
+        <div class="bg-blue rounded-r-3xl p-3 w-1/2">
+          <h3 class="text-white text-left font-jost text-xl mb-2">Frequent Guest</h3>
+          <p class="text-dimwhite text-left font-['Roboto']">
+            Mike is a frequent guest and contributor to news programs, late-night television, podcasts, and more.
+          </p>
+          <a href="/" class="">
+            <div
+              class="mx-auto mt-4 flex text-center w-40 rounded-2xl justify-center bg-orange text-white font-['Roboto'] text-md px-1 py-1"
+            >
+              See Mike on TV
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
-  </section> -->
+  </section>
 </BaseLayout>
