@@ -13,8 +13,8 @@ import { navigationLinks } from '../config/navigationLinks.mjs';
   <!-- Navigation -->
   <div class="lg:flex lg:justify-between lg:items-center">
     <div class="lg:order-1 lg:flex-shrink-0 lg:basis-60">
-      <h4 class="font-jost font-semibold text-black mb-2">Navigation</h4>
-      <ul class="flex gap-x-4 mr-32 lg:flex-col lg:mr-0">
+      <h4 class="font-jost font-semibold text-black mb-2 lg:text-xl">Navigation</h4>
+      <ul class="flex gap-x-4 mr-32 lg:flex-col lg:mr-0 lg:gap-y-1">
         {
           navigationLinks.map((page) => (
             <li
@@ -32,7 +32,7 @@ import { navigationLinks } from '../config/navigationLinks.mjs';
     </div>
     <!-- Socials -->
     <div class="lg:order-3 lg:flex-shrink-0 lg:basis-60">
-      <h4 class="font-jost font-semibold mt-4 mb-2 lg:mt-0 lg:mb-0">Socials</h4>
+      <h4 class="font-jost font-semibold mt-4 mb-2 lg:mt-0 lg:mb-2 lg:text-xl">Socials</h4>
 
       <div class="flex flex-row gap-4">
         <Social platform="facebook" username="AstroMikeMassimino" />
@@ -46,7 +46,7 @@ import { navigationLinks } from '../config/navigationLinks.mjs';
     <hr class="w-36 my-5 mx-auto border-lightgray lg:hidden" />
 
     <!-- Copyright/links -->
-    <div class="text-center pb-6 font-jost lg:order-2 lg:pb-0">
+    <div class="text-center pb-7 font-jost lg:order-2 lg:pb-0 lg:text-lg">
       © 2025 Astro Mike Media, LLC | All Rights Reserved
       <div class="text-gray mt-1">
         <a href="/" class="underline">Privacy Policy</a> | <a href="" class="underline">Terms of Use</a> | <a
