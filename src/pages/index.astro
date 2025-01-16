@@ -4,6 +4,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import GradientButton from "../components/GradientButton.astro";
 import OutlinedButton from "../components/OutlinedButton.astro";
 
+import RocketAnimated from "../components/RocketAnimated.astro";
+
 import { Content as MeetMike } from "../meet_astro_mike.md";
 
 const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling author. Explorer.";
@@ -119,6 +121,9 @@ const highlightedVideo = {
     </div>
   </a>
 
+  <div class="hidden lg:block absolute max-w-96 lg:max-w-none lg:w-[1000px] xl:translate-x-40 xl:w-6xl -translate-y-36">
+    <RocketAnimated />
+  </div>
 
   <!-- Content Cards -->
   <section class="bg-gradient-to-l from-[#2D9EE0] via-[#2E8FE7] to-[#091E3A] py-8 px-3 lg:pt-40">
