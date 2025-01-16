@@ -6,6 +6,7 @@ export default {
     colors: {
       black: "#000000",
       white: "#FFFFFF",
+      almostwhite: "#FEFEFE",
       dimwhite: "#F3F2F2",
       dimmerwhite: "#D9D9D9",
       lightgray: "#B8B8B8",
