@@ -7,6 +7,8 @@ export default {
       black: "#000000",
       white: "#FFFFFF",
       dimwhite: "#F3F2F2",
+      dimmerwhite: "#D9D9D9",
+      lightgray: "#B8B8B8",
       gray: "#5F5F5F",
       gray2: "#171717",
       red: "#E0383E",
