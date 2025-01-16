@@ -12,47 +12,51 @@ const navigationLinks = [
 ];
 ---
 
-<footer class="bg-gradient-to-l from-dimwhite to-dimmerwhite pl-6 pt-3 border-t-dimmerwhite border-t-4">
+<footer class="bg-gradient-to-l from-dimwhite to-dimmerwhite pl-6 pt-3 lg:px-24 lg:py-10 border-t-dimmerwhite border-t-4">
   <!-- Navigation -->
-  <div>
-    <h4 class="font-jost font-semibold text-black mb-2">Navigation</h4>
-    <ul class="flex gap-x-4 mr-32">
-      {
-        navigationLinks.map((page) => (
-          <li
-            class={
-              currentPath === page[1]
-                ? "font-jost bg-gradient-to-r from-orange to-red bg-[length:100%_3.5px] bg-no-repeat bg-bottom"
-                : "font-jost"
-            }
-          >
-            <a href={page[1]}>{page[0]}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-  <!-- Socials -->
-  <h4 class="font-jost font-semibold mt-4 mb-2">Socials</h4>
+  <div class="lg:flex lg:justify-center lg:items-center">
+    <div class="lg:order-1 lg:basis-1/3">
+      <h4 class="font-jost font-semibold text-black mb-2">Navigation</h4>
+      <ul class="flex gap-x-4 mr-32 lg:flex-col lg:mr-0">
+        {
+          navigationLinks.map((page) => (
+            <li
+              class={
+                currentPath === page[1]
+                  ? "font-jost bg-gradient-to-r from-orange to-red bg-[length:100%_3.5px] bg-no-repeat bg-bottom max-w-fit"
+                  : "font-jost"
+              }
+            >
+              <a href={page[1]}>{page[0]}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <!-- Socials -->
+    <div class="lg:order-3 lg:basis-1/3">
+      <h4 class="font-jost font-semibold mt-4 mb-2 lg:mt-0 lg:mb-0">Socials</h4>
 
-  <div class="flex flex-row gap-4">
-    <Social platform="facebook" username="AstroMikeMassimino" />
-    <Social platform="instagram" username="astromikemassimino" />
-    <Social platform="youtube" username="@mike_massimino" />
-    <Social platform="linkedin" username="in/michael-massimino-550785178" />
-    <Social platform="x" username="astro_mike" />
-  </div>
+      <div class="flex flex-row gap-4">
+        <Social platform="facebook" username="AstroMikeMassimino" />
+        <Social platform="instagram" username="astromikemassimino" />
+        <Social platform="youtube" username="@mike_massimino" />
+        <Social platform="linkedin" username="in/michael-massimino-550785178" />
+        <Social platform="x" username="astro_mike" />
+      </div>
+    </div>
 
-  <hr class="w-36 my-5 mx-auto border-lightgray" />
+    <hr class="w-36 my-5 mx-auto border-lightgray lg:hidden" />
 
-  <!-- Copyright/links -->
-  <div class="text-center pb-6 font-jost">
-    © 2025 Astro Mike Media, LLC | All Rights Reserved
-    <div class="text-gray mt-1">
-      <a href="/" class="underline">Privacy Policy</a> | <a href="" class="underline">Terms of Use</a> | <a
-        href=""
-        class="underline">About This Site</a
-      >
+    <!-- Copyright/links -->
+    <div class="text-center pb-6 font-jost lg:order-2 lg:basis-1/2 lg:pb-0">
+      © 2025 Astro Mike Media, LLC | All Rights Reserved
+      <div class="text-gray mt-1">
+        <a href="/" class="underline">Privacy Policy</a> | <a href="" class="underline">Terms of Use</a> | <a
+          href=""
+          class="underline">About This Site</a
+        >
+      </div>
     </div>
   </div>
 </footer>
