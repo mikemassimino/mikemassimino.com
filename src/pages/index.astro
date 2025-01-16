@@ -7,6 +7,9 @@ import OutlinedButton from "../components/OutlinedButton.astro";
 import { Content as MeetMike } from "../meet_astro_mike.md";
 
 const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling author. Explorer.";
+
+const inspiringTalks =
+  "Mike shares with audiences personal stories of inspiration, innovation, teamwork, and leadership as drawn from his experiences in one of the greatest and most dangerous jobs someone can have—NASA astronaut. Mike’s talks leave audiences feeling motivated and inspired to tackle their own challenges with determination, creativity, and a renewed sense of teamwork.";
 ---
 
 <BaseLayout pageTitle="Home">
@@ -17,21 +20,23 @@ const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling 
   >
     <h2
       class="col-span-8 row-span-2 text-center capitalize mt-8 text-white text-header font-exo leading-10
-             lg:max-w-3xl lg:col-start-4 lg:row-start-2 lg:text-4xl lg:mr-8"
+             lg:max-w-3xl lg:col-start-4 lg:row-start-2 lg:text-4xl lg:mr-8
+             2xl:row-start-1 2xl:mt-28 2xl:text-5xl 2xl:leading-snug"
     >
       {heroText}
     </h2>
 
     <div
-      class="col-span-4 col-start-4 row-start-3 row-span-1 align-middle mt-12 max-w-fit
-                lg:col-start-5 lg:row-start-4 lg:col-span-3 lg:mt-0"
+      class="col-span-4 col-start-4 row-start-3 row-span-1 align-middle sm:mt-12 max-w-fit
+                lg:col-start-5 lg:row-start-4 lg:col-span-3 lg:mt-0
+                2xl:row-start-3"
     >
       <GradientButton link="/" text="SPEAKING INFORMATION" />
     </div>
 
     <div
       class="col-span-4 col-start-5 row-span-1 row-start-4 z-10
-                lg:absolute lg:left-20 lg:col-start-1 lg:row-start-2 lg:mb-40"
+                lg:absolute lg:left-20 lg:col-start-1 lg:row-start-2 lg:mb-40 2xl:ml-32"
     >
       <h3 class="text-white font-jost text-[36px] lg:text-6xl leading-[2.8rem]">Mike Massimino</h3>
     </div>
@@ -41,7 +46,7 @@ const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling 
       <img
         src="src/assets/mike/spaceman_cutout.png"
         alt="Mike Massimino headshot."
-        class="absolute bottom-0 left-0 object-cover w-full max-w-96 lg:w-max-w-3xl"
+        class="absolute bottom-0 left-0 object-cover w-full max-w-96 lg:w-max-w-3xl 2xl:ml-48"
       />
     </div>
   </section>
@@ -71,67 +76,117 @@ const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling 
 
   <!-- Content -->
   <section class="bg-gradient-to-l from-[#2D9EE0] via-[#2E8FE7] to-[#091E3A] py-8">
-    <div class="container mx-auto max-w-96 space-y-8">
-      <div class="container shadow-lg">
-        <!-- Images -->
+    <div
+      class="max-w-96 mx-auto lg:max-w-none space-y-8 lg:space-y-0 lg:space-x-8 flex flex-col lg:flex-row lg:items-center lg:justify-center"
+    >
+      <!-- Card 1 -->
+      <div class="shadow-lg">
+        <div class="lg:flex lg:flex-col lg:items-center">
+          <!-- Images -->
+          <div class="flex flex-row">
+            <img src="src/assets/books/moonshot_cover.png" class="w-1/2 lg:max-w-[15em] lg:h-auto rounded-tl-3xl" />
+            <img src="src/assets/books/cover2.jpg" class="w-1/2 lg:max-w-[15em] lg:h-auto rounded-tr-3xl" />
+          </div>
+
+          <!-- Body -->
+          <div class="bg-orange rounded-b-3xl p-4 lg:max-w-[30em]">
+            <h3 class="text-white text-center font-jost text-xl mb-2">New York Times Bestselling Author</h3>
+            <p class="text-dimwhite text-center font-['Roboto']">
+              Mike is a New York Times Bestselling author. Check out his books: Moonshot, Spaceman, and Spaceman
+              (Adapted for Young Readers).
+            </p>
+            <a href="/" class="">
+              <div
+                class="mx-auto mt-4 flex text-center w-40 rounded-2xl justify-center bg-blue text-white font-['Roboto'] text-md px-1 py-1"
+              >
+                Check out Mike's Books
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards 2 and 3 -->
+      <div class="space-y-8 lg:max-w-[40em]">
+        <!-- Card 2 -->
         <div class="flex flex-row">
-          <img src="src/assets/books/moonshot_cover.png" class="w-1/2 rounded-tl-3xl" />
-          <img src="src/assets/books/cover2.jpg" class="w-1/2 rounded-tr-3xl" />
-        </div>
+          <!-- Images -->
+          <img
+            src="src/assets/books/moonshot_cover.png"
+            class="w-1/2 aspect-[4/3] object-cover rounded-l-3xl flex lg:max-w-[20em] lg:h-auto shadow-lg"
+          />
 
-        <!-- Body -->
-        <div class="bg-orange rounded-b-3xl p-4">
-          <h3 class="text-white text-center font-jost text-xl mb-2">New York Times Bestselling Author</h3>
-          <p class="text-dimwhite text-center font-['Roboto']">
-            Mike is a New York Times Bestselling author. Check out his books: Moonshot, Spaceman, and Spaceman (Adapted
-            for Young Readers).
-          </p>
-          <a href="/" class="">
-            <div
-              class="mx-auto mt-4 flex text-center w-40 rounded-2xl justify-center bg-blue text-white font-['Roboto'] text-md px-1 py-1"
-            >
-              Check out Mike's Books
-            </div>
-          </a>
+          <!-- Body -->
+          <div class="bg-gray2 shadow-lg rounded-r-3xl p-3 w-1/2">
+            <h3 class="text-white text-left font-jost text-xl mb-2 lg:text-3xl">TV & Movies</h3>
+            <p class="text-dimwhite text-left font-['Roboto'] lg:text-xl">
+              Mike has been featured in many hit shows, including The Big Bang Theory.
+            </p>
+            <a href="/" class="">
+              <div
+                class="mx-auto mt-4 flex text-center max-w-40 rounded-2xl justify-center bg-gray text-white font-['Roboto'] text-md px-1 py-1"
+              >
+                Watch Mike's Features
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-row">
+          <!-- Images -->
+          <img
+            src="src/assets/books/moonshot_cover.png"
+            class="w-1/2 aspect-[4/3] object-cover rounded-l-3xl shadow-lg flex lg:max-w-[20em] lg:h-auto"
+          />
+
+          <!-- Body -->
+          <div class="bg-blue shadow-lg rounded-r-3xl p-3 w-1/2">
+            <h3 class="text-white text-left font-jost text-xl mb-2 lg:text-3xl">Frequent Guest</h3>
+            <p class="text-dimwhite text-left font-['Roboto'] lg:text-xl">
+              Mike is a frequent guest and contributor to news programs, late-night television, podcasts, and more.
+            </p>
+            <a href="/" class="">
+              <div
+                class="mx-auto mt-4 flex text-center max-w-40 rounded-2xl justify-center bg-orange text-white font-['Roboto'] text-md px-1 py-1"
+              >
+                See Mike on TV
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="container shadow-lg flex flex-row">
-        <!-- Images -->
-        <img src="src/assets/books/moonshot_cover.png" class="w-1/2 aspect-square object-cover rounded-l-3xl flex" />
+    </div>
+  </section>
 
-        <!-- Body -->
-        <div class="bg-gray2 rounded-r-3xl p-3 w-1/2">
-          <h3 class="text-white text-left font-jost text-xl mb-2">TV & Movies</h3>
-          <p class="text-dimwhite text-left font-['Roboto']">
-            Mike has been featured in many hit shows, including The Big Bang Theory.
-          </p>
-          <a href="/" class="">
-            <div
-              class="mx-auto mt-4 flex text-center w-40 rounded-2xl justify-center bg-gray text-white font-['Roboto'] text-md px-1 py-1"
-            >
-              Watch Mike's Features
-            </div>
-          </a>
-        </div>
+  <!-- Inspiring Talks Section -->
+  <section class="mx-6 mt-5 mb-14 lg:max-w-5xl lg:gap-12 lg:mx-auto space-y-5">
+    <!-- Section title -->
+    <h2 class="font-exo text-header col-span-full text-red lg:mb-3">Inspiring Talks from Space to Earth</h2>
+
+    <!-- Text and watch CTA -->
+    <div class="flex items-center">
+      <div class="text-gray text-body font-['Roboto'] lg:text-lg">
+        {inspiringTalks}
       </div>
-      <div class="container shadow-lg flex flex-row">
-        <!-- Images -->
-        <img src="src/assets/books/moonshot_cover.png" class="w-1/2 aspect-square object-cover rounded-l-3xl flex" />
+      <OutlinedButton link="/" text="Watch Mike's highlights" />
+    </div>
 
-        <!-- Body -->
-        <div class="bg-blue rounded-r-3xl p-3 w-1/2">
-          <h3 class="text-white text-left font-jost text-xl mb-2">Frequent Guest</h3>
-          <p class="text-dimwhite text-left font-['Roboto']">
-            Mike is a frequent guest and contributor to news programs, late-night television, podcasts, and more.
-          </p>
-          <a href="/" class="">
-            <div
-              class="mx-auto mt-4 flex text-center w-40 rounded-2xl justify-center bg-orange text-white font-['Roboto'] text-md px-1 py-1"
-            >
-              See Mike on TV
-            </div>
-          </a>
-        </div>
+    <!-- Speaking cards -->
+    <div class="flex flex-col max-w-96 mx-auto">
+      <img src="src/assets/mike/image 8.png" class="rounded-t-2xl aspect-video object-cover" />
+      <div class="p-5 pb-8 bg-blue rounded-b-2xl">
+        <h3 class="text-white font-jost mb-4 mt-3 text-[20px]">Massimino on Persistence</h3>
+        <p class="text-body text-white font-['Roboto']">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat maximus dolor ornare congue.
+          Vivamus ultrices tincidunt dolor nec iaculis.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="flex flex-col items-center mt-4">
+      <h2 class="font-jost text-red text-center text-2xl lg:mb-3">Bring Mike’s Inspiring Stories to Your Event:</h2>
+      <div class="max-w-38 mt-2">
+        <GradientButton link="/" text="SPEAKING INFORMATION" />
       </div>
     </div>
   </section>

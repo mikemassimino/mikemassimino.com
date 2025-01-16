@@ -1,16 +1,47 @@
 ---
+const currentPath = Astro.url.pathname;
 
+const navigationLinks = [
+  ["Home", "/"],
+  ["Biography", "/about"],
+  ["Books", "/books"],
+  ["Media", "/media"],
+  ["Speaking", "/speaking"],
+];
 ---
 
-<!-- Logo on the left -->
-<img src="src/assets/header logo.png" />
-
 <!-- Hamburger menu (visible on small screens) -->
-<div class="block lg:hidden">
+<div class="block lg:hidden z-20">
   <button class="text-black">
     <!-- Hamburger icon -->
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
     </svg>
   </button>
+</div>
+
+<div class="hidden lg:flex items-center">
+  <ul class="flex gap-x-4 mr-32">
+    {
+      navigationLinks.map((page) => (
+        <li
+          class={
+            currentPath === page[1]
+              ? "font-jost text-[20px] bg-gradient-to-r from-orange to-red bg-[length:100%_3.5px] bg-no-repeat bg-bottom"
+              : "font-jost text-[20px]"
+          }
+        >
+          <a href={page[1]}>{page[0]}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <!-- Contact button -->
+  <a href="/contact" class="w-full mr-8 z-20">
+    <div
+      class="flex text-center justify-center bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] rounded-2xl text-white font-reddit font-light text-[20px] px-3 py-1 lg:py-2 uppercase"
+    >
+      Contact
+    </div>
+  </a>
 </div>
