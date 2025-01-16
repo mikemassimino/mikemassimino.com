@@ -54,26 +54,52 @@ const tvMoviesImg = "src/assets/bbt.jpg";
     </div>
   </section>
 
-  <!-- Meet Astro Mike -->
-  <section class="flex flex-col lg:flex-row mx-5 mt-5 mb-14 lg:max-w-5xl lg:gap-12 lg:items-center lg:mx-auto">
-    <div class="flex-1 lg:w-1/2">
-      <h2 class="font-exo text-header col-span-full text-red lg:mb-3 lg:text-3xl 2xl:text-4xl">Meet Astro Mike</h2>
+  <!-- Meet Astro Mike V2 -->
+  <section
+    class="grid grid-cols-8 grid-rows-meet items-center
+                  md:grid-cols-12 md:grid-rows-meetMd
+                  px-5 pb-16 pt-8 gap-x-3
+                  lg:mx-auto lg:max-w-7xl"
+  >
+    <h2
+      class="row-start-1 col-start-1 col-span-full
+               md:col-start-2
+               font-exo lg:text-5xl text-header text-red
+               lg:mb-5"
+    >
+      Meet Astro Mike
+    </h2>
 
-      <div class="space-y-4 text-gray text-body font-['Roboto'] lg:text-lg">
-        <MeetMike class="col-span-full" />
-      </div>
+    <div
+      class="row-start-2 col-start-1 col-span-full
+                md:col-start-2 md:col-span-6
+                space-y-4 mb-3
+                md:max-w-xl
+                lg:text-[16px] lg:pr-12
+                text-gray text-body font-['Roboto']"
+    >
+      <MeetMike />
     </div>
 
-    <div class="flex flex-row lg:flex-col w-full lg:w-1/2 items-center gap-[12px] mt-5">
-      <div class="w-1/2 lg:w-full">
-        <img src="src/assets/mike/image 8.png" class="" />
-      </div>
+    <img
+      src="src/assets/mike/image 8.png"
+      class="row-start-7 row-span-2 col-start-1 col-span-4
+                                                  md:row-start-2 md:col-span-5 md:col-start-8
+                                                  lg:row-start-1
+                                                  md:max-w-md md:h-auto"
+    />
 
-      <!-- Buttons container -->
-      <div class="flex flex-col gap-3 w-1/2 lg:w-full lg:max-w-sm">
-        <GradientButton link="/" text="CONTACT MIKE" />
-        <OutlinedButton link="/" text="FULL BIO" />
-      </div>
+    <div
+      class="row-start-7 row-span-1 col-start-5 col-span-4
+                md:row-start-8 md:col-start-2 md:col-span-3 md:max-w-80"
+    >
+      <GradientButton link="/" text="CONTACT MIKE" />
+    </div>
+    <div
+      class="row-start-8 row-span-1 col-start-5 col-span-4
+                md:row-start-8 md:col-start-5 md:col-span-3 md:max-w-80"
+    >
+      <OutlinedButton link="/" text="FULL BIO" />
     </div>
   </section>
 

@@ -34,6 +34,8 @@ export default {
       },
       gridTemplateRows: {
         hero: "repeat(5, minmax(80px, auto));",
+        meet: "repeat(9, minmax(auto));",
+        meetMd: "repeat(9, minmax(5px, auto));",
       },
     },
   },
