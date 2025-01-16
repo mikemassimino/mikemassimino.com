@@ -32,6 +32,7 @@ export default {
         exo: ['"Exo 2 Variable"'],
         reddit: ['"Reddit Sans Variable"'],
         jost: ['"Jost Variable"'],
+        roboto: ["Roboto"],
       },
       gridTemplateRows: {
         hero: "repeat(5, minmax(80px, auto));",
