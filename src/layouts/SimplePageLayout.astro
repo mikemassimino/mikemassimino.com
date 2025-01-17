@@ -12,13 +12,25 @@ const { frontmatter } = Astro.props;
     <img src={frontmatter.mainImage} alt={frontmatter.mainImageAlt} class="rounded-lg" />
     <p class="pt-1 italic text-right">{frontmatter.mainImageAlt}</p>
   </div>
-  <div class="font-roboto text-body md:text-lg text-gray space-y-4 lg:space-y-8 mt-4">
+  <div class="markdown-content font-roboto text-body md:text-lg text-gray space-y-4 lg:space-y-8 mt-4">
     <slot />
   </div>
 </BasePageLayout>
 
 <style is:global>
-  em {
+  .markdown-content em {
     @apply font-sans;
+  }
+
+  .markdown-content h1 {
+    @apply text-3xl font-exo text-red;
+  }
+
+  .markdown-content h2 {
+    @apply text-xl font-exo;
+  }
+
+  .markdown-content a {
+    @apply text-orange;
   }
 </style>
