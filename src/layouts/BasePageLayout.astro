@@ -1,0 +1,11 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { pageTitle } = Astro.props;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="px-10 lg:mx-auto lg:max-w-7xl lg:pb-16 border-dimmerwhite border-t-2">
+    <slot />
+  </section>
+</BaseLayout>

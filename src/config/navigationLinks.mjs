@@ -1,6 +1,6 @@
 export const navigationLinks = [
   ["Home", "/"],
-  ["Biography", "/about"],
+  ["Biography", "/biography"],
   ["Books", "/books"],
   ["Media", "/media"],
   ["Speaking", "/speaking"],
