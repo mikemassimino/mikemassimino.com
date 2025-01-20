@@ -1,0 +1,55 @@
+---
+import GradientButton from "../components/GradientButton.astro";
+import BasePageLayout from "./BasePageLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BasePageLayout pageTitle={frontmatter.title}>
+  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">{frontmatter.title}</h1>
+
+  <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
+
+  <div class="mx-auto max-w-96 lg:float-right lg:ml-4">
+    <img src={frontmatter.coverImage} alt={frontmatter.coverImageAlt} class="rounded-lg" />
+    <p class="pt-1 italic text-right">{frontmatter.coverImageAlt}</p>
+  </div>
+  <div class="markdown-content font-roboto text-body md:text-lg lg:px-16 text-gray space-y-4 lg:space-y-8 mt-4">
+    <slot />
+  </div>
+
+  <GradientButton text="See all of Mike's books" link="/books" />
+</BasePageLayout>
+
+<style is:global>
+  .markdown-content em {
+    @apply font-sans;
+  }
+
+  .markdown-content h1 {
+    @apply text-3xl font-exo text-red;
+  }
+
+  .markdown-content h1 > em {
+    @apply font-exo;
+  }
+
+  .markdown-content h2 {
+    @apply text-xl font-exo;
+  }
+
+  .markdown-content a {
+    @apply text-orange;
+  }
+
+  .markdown-content ul {
+    @apply px-5 list-disc;
+  }
+
+  .markdown-content blockquote {
+    @apply mx-8 pl-4 border-l-2 border-l-dimmerwhite;
+  }
+
+  .markdown-content hr {
+    @apply max-w-20 mx-auto border-lightgray;
+  }
+</style>
