@@ -1,0 +1,107 @@
+---
+import BasePageLayout from "../layouts/BasePageLayout.astro";
+
+const videos = [
+  // {
+  //   id: "J1uCJAik83s",
+  //   title: "Media Highlights",
+  //   tag: "speaking_selections",
+  // },
+  {
+    id: "Z8ucFHBS2uU",
+    title: "Introducing Mike",
+    tag: "speaking_selections",
+    mustWatch: false,
+  },
+  {
+    id: "kMySqaPtA8A",
+    title: "An Astronaut's View of Space",
+    tag: "speaking_selections",
+    mustWatch: false,
+  },
+  {
+    id: "2Bge1TSrGqs",
+    title: "Video Introduction",
+    tag: "speaking_selections",
+    mustWatch: false,
+  },
+  {
+    id: "MLGdevZePgA",
+    title: "Massimino on Persistence",
+    tag: "speaking_selections",
+    mustWatch: false,
+  },
+  {
+    id: "E0b7Wd57GUI",
+    title: "Funny Water Survival Story",
+    tag: "speaking_selections",
+    mustWatch: true,
+  },
+  {
+    id: "ALtxCU32wis",
+    title: "Following Dreams and Setting Goals",
+    tag: "speaking_selections",
+    mustWatch: false,
+  },
+  {
+    id: "wVtq8zdJ5uM",
+    title: "Teamwork and Innovation to Overcome Crisis",
+    tag: "speaking_selections",
+    mustWatch: false,
+  },
+  {
+    id: "roRVQhcz6so",
+    title: "Recovering from the Space Shuttle Accident",
+    tag: "speaking_selections",
+    mustWatch: false,
+  },
+];
+---
+
+<BasePageLayout>
+  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">Mike's Speaking</h1>
+
+  <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
+
+  <p class="mx-auto font-roboto text-md text-gray max-w-md lg:max-w-2xl lg:text-lg lg:mb-8 lg:leading-relaxed">
+    Mike shares with audiences personal stories of inspiration, innovation, teamwork and leadership as drawn from his
+    experiences in one of the greatest and most dangerous jobs someone can have—NASA astronaut. Through humor and
+    storytelling, he highlights the pursuit and achievement of a childhood dream, the dedication and teamwork necessary
+    to train for one of NASA’s most difficult space missions, the determination needed to face tragedies like the
+    Columbia space shuttle accident, and the innovation and leadership necessary to overcome seemingly insurmountable
+    trials when in space and beyond. He leaves his audiences understanding the value of having passion for what you do,
+    of perseverance in achieving a goal, of building a team to meet great challenges, and of creativity and innovation
+    in problem solving. He also inspires audiences with the awe and beauty of space and shares his thoughts on the
+    future—both personal and in regard to the ever-changing and competitive space program. Contact him <a
+      href="/contact"
+      class="text-orange">here</a
+    >!
+  </p>
+
+  <div class="mt-4 gap-y-6 flex flex-col md:flex-row md:flex-wrap">
+    {
+      videos.map((video) => (
+        <div class="mx-auto md:p-3 md:mb-0 flex-shrink-0 relative">
+          {video.mustWatch && <p class="absolute bg-yellow p-1 text-black top-0 right-2 font-exo lg:text-xl skew-y-12">MUST WATCH!</p>}
+          <a href={`https://www.youtube.com/watch?v=${video.id}`} data-fslightbox="gallery">
+            <div>
+              <img
+                src={`https://i1.ytimg.com/vi/${video.id}/mqdefault.jpg`}
+                alt={video.title}
+                class="aspect-video w-64 lg:w-80 rounded-lg outline outline-4 outline-blue"
+              />
+              <p class="mt-2 lg:mt-4 text-gray text-center font-roboto text-lg lg:text-lg w-64 lg:w-80">
+                {video.title}
+              </p>
+            </div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</BasePageLayout>
+
+<script>
+  // @ts-ignore
+  import fsLightbox from "fslightbox";
+</script>
