@@ -1,4 +1,5 @@
 ---
+import GradientButton from "../components/GradientButton.astro";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
 
 const videos = [
@@ -82,7 +83,9 @@ const videos = [
     {
       videos.map((video) => (
         <div class="mx-auto md:p-3 md:mb-0 flex-shrink-0 relative">
-          {video.mustWatch && <p class="absolute bg-yellow p-1 text-black top-0 right-2 font-exo lg:text-xl skew-y-12">MUST WATCH!</p>}
+          {video.mustWatch && (
+            <p class="absolute bg-yellow p-1 text-black top-0 right-2 font-exo lg:text-xl skew-y-12">MUST WATCH!</p>
+          )}
           <a href={`https://www.youtube.com/watch?v=${video.id}`} data-fslightbox="gallery">
             <div>
               <img
@@ -98,6 +101,9 @@ const videos = [
         </div>
       ))
     }
+  </div>
+  <div class="mx-auto my-4 max-w-lg">
+    <GradientButton link="/contact" text="Get in touch with Mike about speaking at your event!" />
   </div>
 </BasePageLayout>
 
