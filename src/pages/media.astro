@@ -1,0 +1,97 @@
+---
+import GradientButton from "../components/GradientButton.astro";
+import BasePageLayout from "../layouts/BasePageLayout.astro";
+
+const sections = ["News", "Television", "Appearances", "NASA"];
+
+const videos = {
+  "News": [
+    { id: "lwFnb1RNX0Y", title: "The Daily Show" },
+    { id: "CDPrBqlig2U", title: "Good Morning America (Moonshot)" },
+    { title: "Fox News (Commercial Lander)", thumbnail_name: "fox_news_commercial_lander", link: "https://www.foxnews.com/video/6342594637112" },
+    { id: "bwIuoIQGX48", title: "GMA3 Extended Book Talk" },
+    { id: "GxKXketbmpw", title: "The 11th Hour with Brian Williams" },
+    { id: "XjLh4WgqDUw", title: "Erin Burnett Out Front" },
+    { title: "CNN", thumbnail_name: "cnn", link: "https://www.cnn.com/videos/tv/2020/05/30/spacex-nasa-launch-aims-to-make-history.cnn" },
+    { id: "AC1T6Gm6CCQ", title: "Today (SpaceX Launch Appearance)" },
+    { title: "Good Morning America (Whitson)", thumbnail_name: "good_morning_america", link: "https://abcnews.go.com/GMA/video/us-astronaut-blasts-history-books-46979317" },
+    { id: "zzYOUVbbWdw", title: "Today (Astroid Appearance)" },
+  ],
+  "Television": [
+    { title: "Netflix: Worn Stories", thumbnail_name: "netflix_worn_stories", link: "https://player.vimeo.com/video/648871234?h=ce8858b01e" },
+    { id: "ZWMl9BwBQ2g", title: "Late Show with David Letterman" },
+    { id: "gMZNx7bxZes", title: "Big Bang Theory Clip" },
+    { id: "QoR3Un2Ws24", title: "Additional Big Bang Theory Clip" },
+  ],
+  "Appearances": [
+    { id: "t6eftfDJ9fQ", title: "Adam Savage's Tested" },
+    { id: "Ok0O9YzHPDo", title: "Mike Massimino, a Citizen of Earth" },
+    { id: "Kc7Upg8PFxw", title: "360° VR Space Safari" },
+    { id: "1-9kiNFIBzo", title: "EQ Portrait" },
+  ],
+  "NASA": [
+    { id: "mwTNPMpCCMM", title: "Mike's Spacewalk" },
+    { id: "akw6XBjD5ho", title: "ISS Science Garage" },
+    { id: "rxOZUBDBo3I", title: "Gravity Congratulations" },
+  ],
+};
+---
+
+<BasePageLayout>
+  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">Mike in the Media</h1>
+
+  <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
+
+  <p class="mx-auto font-roboto text-md text-gray max-w-md lg:max-w-2xl lg:text-lg lg:mb-8 lg:leading-relaxed">
+    In addition to speaking, Mike is a frequent guest on television news programs, talk shows, late night TV, and even sitcoms including The Big Bang Theory.
+    He has appeared on Wired, Netflix, Good Morning America, Late Show with David Letterman, Fox News, Today, CNN, and more. Check out some highlights below. For media inquiries, contact him <a
+      href="/contact"
+      class="text-orange">here</a
+    >!
+  </p>
+
+  {
+    sections.map((section) => (
+      <div>
+        <h2 class="text-2xl font-bold text-blue mt-8 mb-4">{section}</h2>
+        <div class="mt-4 gap-y-6 flex flex-col md:flex-row md:flex-wrap">
+          {
+            videos[section]?.map((video) => ( // <-- Fixed this part
+              <div class="mx-auto md:p-3 md:mb-0 flex-shrink-0 relative">
+                {video.mustWatch && (
+                  <p class="absolute bg-yellow p-1 text-black top-0 right-2 font-exo lg:text-xl skew-y-12">
+                    MUST WATCH!
+                  </p>
+                )}
+                
+                <a href={video.id ? `https://www.youtube.com/watch?v=${video.id}` : video.link} 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   data-fslightbox={video.id ? "gallery" : undefined}>
+
+                  <div>
+                    <img
+                      src={video.id 
+                        ? `https://i1.ytimg.com/vi/${video.id}/mqdefault.jpg`
+                        : `src/assets/thumbnails/media/${video.thumbnail_name}.jpg`}
+                      alt={video.title}
+                      class="aspect-video w-64 lg:w-80 rounded-lg outline outline-4 outline-blue"
+                    />
+                    <p class="mt-2 lg:mt-4 text-gray text-center font-roboto text-lg lg:text-lg w-64 lg:w-80">
+                      {video.title}
+                    </p>
+                  </div>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    ))
+  }
+</BasePageLayout>
+
+<script>
+  // @ts-ignore
+  import fsLightbox from "fslightbox";
+</script>
