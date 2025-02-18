@@ -43,7 +43,7 @@ const highlightedVideo = {
                 lg:col-start-5 lg:row-start-4 lg:col-span-3 lg:mt-0
                 2xl:row-start-3"
     >
-      <GradientButton link="/" text="SPEAKING INFORMATION" />
+      <GradientButton link="/speaking" text="SPEAKING INFORMATION" />
     </div>
 
     <div
@@ -100,15 +100,15 @@ const highlightedVideo = {
 
     <div
       class="row-start-7 row-span-1 col-start-5 col-span-4
-                md:row-start-8 md:col-start-2 md:col-span-3 md:max-w-80"
+                md:row-start-8 md:col-start-2 md:col-span-3 md:max-w-80 z-10"
     >
-      <GradientButton link="/" text="CONTACT MIKE" />
+      <GradientButton link="https://mikemassimino.paperform.co/" text="CONTACT MIKE" />
     </div>
     <div
       class="row-start-8 row-span-1 col-start-5 col-span-4
-                md:row-start-8 md:col-start-5 md:col-span-3 md:max-w-80"
+                md:row-start-8 md:col-start-5 md:col-span-3 md:max-w-80 z-10"
     >
-      <OutlinedButton link="/" text="FULL BIO" />
+      <OutlinedButton link="/biography" text="FULL BIO" />
     </div>
   </section>
 
@@ -142,12 +142,14 @@ const highlightedVideo = {
 
           <!-- Body -->
           <div class="bg-gradient-to-b from-[#FDBE3D] to-[#E59447] rounded-b-3xl p-4 lg:max-w-[30em] shadow-lg">
-            <h3 class="text-white text-center font-jost font-medium text-xl mb-2 lg:text-3xl">New York Times Bestselling Author</h3>
+            <h3 class="text-white text-center font-jost font-medium text-xl mb-2 lg:text-3xl">
+              New York Times Bestselling Author
+            </h3>
             <p class="text-dimwhite text-center font-reddit lg:text-lg font-light">
               Mike is a New York Times Bestselling author. Check out his books: Moonshot, Spaceman, and Spaceman
               (Adapted for Young Readers).
             </p>
-            <a href="/" class="">
+            <a href="/books" class="">
               <div
                 class="mx-auto mt-4 flex text-center max-w-40 md:max-w-56 md:h-12 rounded-2xl justify-center bg-blue text-white font-reddit font-light text-md md:text-xl items-center px-1 py-1"
               >
@@ -174,7 +176,7 @@ const highlightedVideo = {
             <p class="text-dimwhite text-left font-reddit lg:text-lg md:pr-4 font-light">
               Mike has been featured in many hit shows, including The Big Bang Theory.
             </p>
-            <a href="/" class="">
+            <a href="/media" class="">
               <div
                 class="mx-auto mt-4 flex text-center max-w-40 md:max-w-56 md:h-12 rounded-2xl justify-center bg-gray text-white font-reddit font-light text-md md:text-xl items-center px-1 py-1"
               >
@@ -196,7 +198,7 @@ const highlightedVideo = {
             <p class="text-dimwhite text-left font-reddit lg:text-lg md:pr-4 font-light">
               Mike is a frequent guest and contributor to news programs, late-night television, podcasts, and more.
             </p>
-            <a href="/" class="">
+            <a href="/media" class="">
               <div
                 class="mx-auto mt-4 flex text-center max-w-40 md:max-w-56 md:h-12 rounded-2xl justify-center bg-gray text-white font-reddit font-light text-md md:text-xl items-center px-1 py-1"
               >
@@ -225,7 +227,7 @@ const highlightedVideo = {
           {inspiringTalks}
         </div>
         <div class="md:flex-shrink-0 uppercase font-light">
-          <OutlinedButton link="/" text="Watch Mike's highlights" />
+          <OutlinedButton link="/speaking" text="Watch Mike's highlights" />
         </div>
       </div>
 
@@ -271,7 +273,7 @@ const highlightedVideo = {
           Bring Mike’s Inspiring Stories to Your Event:
         </h2>
         <div class="max-w-38 mt-2">
-          <GradientButton link="/" text="SPEAKING INFORMATION" />
+          <GradientButton link="/speaking" text="SPEAKING INFORMATION" />
         </div>
       </div>
     </div>
