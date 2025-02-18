@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/SimplePageLayout.astro
-title: Biography
+title: Meet Mike
 mainImage: "src/assets/mike/mikeinspace.jpg"
 mainImageAlt: "Mike in space."
 ---
