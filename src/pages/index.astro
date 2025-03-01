@@ -1,30 +1,40 @@
 ---
+import { Image } from "astro:assets";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import GradientButton from "../components/GradientButton.astro";
 import OutlinedButton from "../components/OutlinedButton.astro";
-
 import RocketAnimated from "../components/RocketAnimated.astro";
 
 import { Content as MeetMike } from "../meet_astro_mike.md";
 
 const heroText = "Astronaut. Columbia Professor. Media Personality. Bestselling author. Explorer.";
-
 const inspiringTalks =
   "Mike shares with audiences personal stories of inspiration, innovation, teamwork, and leadership as drawn from his experiences in one of the greatest and most dangerous jobs someone can have—NASA astronaut. Mike’s talks leave audiences feeling motivated and inspired to tackle their own challenges with determination, creativity, and a renewed sense of teamwork.";
 
-const frequentGuestImg = "src/assets/daily.jpg";
-const tvMoviesImg = "src/assets/bbt.jpg";
-
 const highlightedVideo = {
-  img: "src/assets/image 16.png",
   title: "Astronaut Answers Questions from Twitter | Tech Support | Wired",
   url: "https://www.youtube.com/watch?v=YtIw3wqHeNY",
 };
+
+import highlightedVideoImg from "../assets/image 16.png";
+import meetMikeImage from "../assets/mike/image 8.png";
+import moonImage from "../assets/moon.svg";
+import astroMike from "../assets/mike/spaceman_cutout.png";
+import moonshotCoverImage from "../assets/books/moonshot_cover.png";
+import spacemanCoverImage from "../assets/books/cover2.jpg";
+
+import frequentGuestImg from "../assets/daily.jpg";
+import tvMoviesImg from "../assets/bbt.jpg";
+
+import speakingTmpImg from "../assets/mike/image 8.png";
 ---
 
 <BaseLayout pageTitle="Home">
-  <img src="src/assets/moon.svg" class="absolute top-0 right-0 w-32 lg:w-60 h-auto z-10" />
+  <!-- Moon in the top bar -->
+  <Image src={moonImage} alt="Moon." loading="eager" class="absolute top-0 right-0 w-32 lg:w-60 h-auto z-10" />
+
   <!-- Hero Section -->
   <section
     class="relative grid grid-cols-8 grid-rows-hero gap-y-5 bg-hero-gradient bg-cover items-center
@@ -55,9 +65,10 @@ const highlightedVideo = {
 
     <div class="col-span-5 row-span-2 col-start-1 row-start-5 -mb-24 relative
                 lg:ml-24">
-      <img
-        src="src/assets/mike/spaceman_cutout.png"
+      <Image
+        src={astroMike}
         alt="Mike Massimino headshot."
+        loading="eager"
         class="absolute bottom-0 left-0 object-cover w-full max-w-96 lg:w-max-w-3xl 2xl:ml-48"
       />
     </div>
@@ -90,12 +101,11 @@ const highlightedVideo = {
       <MeetMike />
     </div>
 
-    <img
-      src="src/assets/mike/image 8.png"
-      class="row-start-7 row-span-2 col-start-1 col-span-4
-                                                  md:row-start-2 md:col-span-5 md:col-start-8
-                                                  lg:row-start-1
-                                                  md:max-w-md md:h-auto"
+    <Image
+      src={meetMikeImage}
+      alt="Mike Massimino speaking on stage."
+      loading="eager"
+      class="row-start-7 row-span-2 col-start-1 col-span-4 md:row-start-2 md:col-span-5 md:col-start-8 lg:row-start-1 md:max-w-md md:h-auto"
     />
 
     <div
@@ -117,11 +127,12 @@ const highlightedVideo = {
     <div
       class="hidden lg:block absolute right-0 -translate-y-36 bg-almostwhite shadow-[0_0_15px_3px_rgba(0,0,0,0.3)] rounded-2xl max-w-80 p-4"
     >
-      <img src={highlightedVideo.img} />
+      <Image src={highlightedVideoImg} alt="Thumbnail of Mike on Wired." loading="lazy" />
       <h4 class="text-center italic font-jost font-lg">{highlightedVideo.title}</h4>
     </div>
   </a>
 
+  <!-- Rocket -->
   <div class="hidden lg:block absolute max-w-96 lg:max-w-none lg:w-[1000px] xl:translate-x-40 xl:w-6xl -translate-y-36">
     <RocketAnimated />
   </div>
@@ -136,8 +147,16 @@ const highlightedVideo = {
         <div class="lg:flex lg:flex-col lg:items-center">
           <!-- Images -->
           <div class="flex flex-row shadow-lg">
-            <img src="src/assets/books/moonshot_cover.png" class="w-1/2 lg:max-w-[15em] lg:h-auto rounded-tl-3xl" />
-            <img src="src/assets/books/cover2.jpg" class="w-1/2 lg:max-w-[15em] lg:h-auto rounded-tr-3xl" />
+            <Image
+              src={moonshotCoverImage}
+              alt="Cover of Moonshot."
+              class="w-1/2 lg:max-w-[15em] lg:h-auto rounded-tl-3xl"
+            />
+            <Image
+              src={spacemanCoverImage}
+              alt="Cover of Spaceman."
+              class="w-1/2 lg:max-w-[15em] lg:h-auto rounded-tr-3xl"
+            />
           </div>
 
           <!-- Body -->
@@ -165,9 +184,11 @@ const highlightedVideo = {
         <!-- Card 2 -->
         <div class="flex flex-row">
           <!-- Images -->
-          <img
+          <Image
             src={tvMoviesImg}
+            loading="lazy"
             class="w-1/2 aspect-[4/3] object-cover rounded-l-3xl flex lg:max-w-[20em] lg:h-auto shadow-lg"
+            alt="Mike's cameo on the Big Bang Theory."
           />
 
           <!-- Body -->
@@ -187,9 +208,11 @@ const highlightedVideo = {
         </div>
         <div class="flex flex-row">
           <!-- Images -->
-          <img
+          <Image
             src={frequentGuestImg}
+            loading="lazy"
             class="w-1/2 aspect-[4/3] object-cover rounded-l-3xl shadow-lg flex lg:max-w-[20em] lg:h-auto"
+            alt="Mike on the television."
           />
 
           <!-- Body -->
@@ -234,7 +257,7 @@ const highlightedVideo = {
       <!-- Speaking cards -->
       <div class="lg:flex lg:flex-row lg:space-x-16 lg:pb-4">
         <div class="flex flex-col max-w-96 mx-auto">
-          <img src="src/assets/mike/image 8.png" class="rounded-t-2xl aspect-video object-cover" />
+          <Image src={speakingTmpImg} alt="Mike speaking." class="rounded-t-2xl aspect-video object-cover" />
           <div class="px-5 pb-6 bg-blue rounded-b-2xl">
             <h3 class="text-white font-jost mt-4 text-[20px]">Massimino on Persistence</h3>
             <p class="text-body text-white font-roboto">
