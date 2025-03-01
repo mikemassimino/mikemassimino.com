@@ -20,3 +20,16 @@ Mike is a professor in Columbia University's engineering school, The Fu Foundati
 
 ## Intrepid Museum
 Mike is the Senior Adviser for Space Programs at the Intrepid Sea, Air & Space Museum in New York City. There are some fantastic programs coming up on board, don't miss out! For more information, please visit the [Intrepid's website](https://www.intrepidmuseum.org/).
+
+# Podcast
+
+ Podcast from Mike and his friend and fellow former astronaut Garrett Reisman. Enjoy their discussions about the bizarre, crazy, and surprising world of being 2 Funny Astronauts!
+
+ ## Listen now
+ - [Apple Podcasts](https://podcasts.apple.com/us/podcast/2-funny-astronauts/id1565032832?uo=4&ls=1&at=11lEW&ct=sczdx8)
+ - [Spotify](https://open.spotify.com/show/5WTiPHCLmm58LRBVX6bQjd)
+ - [Youtube](https://www.youtube.com/channel/UCb6VG031XF9lZAg1tGq548A)
+ - [Google Podcasts](https://podcasts.google.com/feed/aHR0cHM6Ly8yZnVubnlhc3Ryb25hdXRzLmNvbS9mZWVkLnhtbA)
+ - [Podbean](https://2funnyastronauts.com/)
+
+![ee](../assets/2_funny_astronauts_podcast_logo.jpg)

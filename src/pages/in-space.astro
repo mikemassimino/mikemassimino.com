@@ -1,0 +1,53 @@
+---
+import BasePageLayout from "../layouts/BasePageLayout.astro";
+
+const imageNames = [
+  "s125e009916_orig.jpg",
+  "s125e009398_orig.jpg",
+  "S109E5063_orig.jpg",
+  "S109E5386_orig.jpg",
+  "s109e5402_orig.jpg",
+  "S109E5688_orig.jpg",
+  "S109E5722_orig.jpg",
+  "s125e006592_orig.jpg",
+  "s125e007537_orig.jpg",
+  "s125e007903_orig.jpg",
+  "s125e009381_orig.jpg",
+  "s125e009840_orig.jpg",
+  "s125e011491_orig.jpg",
+  "s125e012138_orig.jpg",
+  "s125e012204_orig.jpg",
+  "sts109-326-008_orig.jpg",
+  "sts109-326-031_orig.jpg",
+  "sts109-328-018_orig.jpg",
+];
+
+// Paths for full-size and thumbnail images
+const fullImagePaths = imageNames.map((name) => `/src/assets/in_space/in_space/${name}`);
+const thumbnailPaths = imageNames.map((name) => `/src/assets/in_space/in_space_thumbnails/${name}`);
+---
+
+<BasePageLayout pageTitle="In Space">
+  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">In Space</h1>
+  <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
+
+  <!-- Gallery Grid -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 px-16 mb-12">
+    {
+      imageNames.map((name, index) => (
+        <a data-fslightbox="gallery" href={fullImagePaths[index]}>
+          <img
+            src={thumbnailPaths[index]}
+            alt={`Space Image ${index + 1}`}
+            class="w-full h-auto rounded-lg shadow-md transition-transform hover:scale-105"
+          />
+        </a>
+      ))
+    }
+  </div>
+</BasePageLayout>
+
+<script>
+  // @ts-ignore
+  import fsLightbox from "fslightbox";
+</script>
