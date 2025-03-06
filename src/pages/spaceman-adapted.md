@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/BookLayout.astro
 title: Spaceman (Adapted for Young Readers)
-coverImage: "src/assets/books/spaceman_adapted.jpg"
+coverImage: "/img/books/spaceman_adapted.jpg"
 coverImageAlt: "The cover of 'Spaceman (Adapted for Young Readers)'."
 ---
 

@@ -4,14 +4,10 @@ import { Image } from "astro:assets";
 import OutlinedButton from "../components/OutlinedButton.astro";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
 
-import moonshotCover from "../assets/books/moonshot_cover.png";
-import spacemanCover from "../assets/books/cover2.jpg";
-import spacemanAdaptedCover from "../assets/books/spaceman_adapted.jpg";
-
 const books = [
-  { title: "Moonshot", cover: moonshotCover, link: "/moonshot" },
-  { title: "Spaceman", cover: spacemanCover, link: "/spaceman" },
-  { title: "Spaceman (adapted)", cover: spacemanAdaptedCover, link: "/spaceman-adapted" },
+  { title: "Moonshot", cover: "/img/books/moonshot_cover.png", link: "/moonshot" },
+  { title: "Spaceman", cover: "/img/books/cover2.jpg", link: "/spaceman" },
+  { title: "Spaceman (adapted)", cover: "/img/books/spaceman_adapted.jpg", link: "/spaceman-adapted" },
 ];
 ---
 
@@ -35,7 +31,7 @@ const books = [
       books.map((book) => (
         <div class="bg-hero-gradient bg-cover p-3 rounded-xl shadow-xl md:mb-0">
           <a href={book.link}>
-            <Image src={book.cover} alt={book.title} loading="eager" class="h-72 lg:h-96 w-auto aspect-[2/3] mx-auto rounded-md" />
+            <img src={book.cover} alt={book.title} loading="eager" class="h-72 lg:h-96 w-auto aspect-[2/3] mx-auto rounded-md" />
           </a>
           <div class="mt-4 mx-auto w-full">
             <OutlinedButton text={"Learn more about " + book.title} link={book.link} />

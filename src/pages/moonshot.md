@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/BookLayout.astro
 title: Moonshot
-coverImage: "src/assets/books/moonshot_cover.png"
+coverImage: "/img/books/moonshot_cover.png"
 coverImageAlt: "The cover of 'Moonshot'."
 ---
 

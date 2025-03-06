@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/BookLayout.astro
 title: Spaceman
-coverImage: "src/assets/books/cover2.jpg"
+coverImage: "/img/books/cover2.jpg"
 coverImageAlt: "The cover of 'Spaceman'."
 ---
 

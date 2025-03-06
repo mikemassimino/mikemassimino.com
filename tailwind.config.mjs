@@ -22,7 +22,7 @@ export default {
       //   md: "790px",
       // },
       backgroundImage: {
-        "hero-gradient": "url('src/assets/Frame 1.svg')",
+        "hero-gradient": "url('/img/Frame 1.svg')",
       },
       fontSize: {
         header: "2rem",

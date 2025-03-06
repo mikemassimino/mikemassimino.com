@@ -22,17 +22,13 @@ import highlightedVideoImg from "../assets/image 16.png";
 import meetMikeImage from "../assets/mike/image 8.png";
 import moonImage from "../assets/moon.svg";
 import astroMike from "../assets/mike/spaceman_cutout.png";
-import moonshotCoverImage from "../assets/books/moonshot_cover.png";
-import spacemanCoverImage from "../assets/books/cover2.jpg";
 
 import frequentGuestImg from "../assets/daily.jpg";
 import tvMoviesImg from "../assets/bbt.jpg";
 
-import speakingTmpImg from "../assets/mike/image 8.png";
-
-import changeHighlightedSpeakingImg from "../assets/thumbnails/highlighted_speaking/change.jpg";
-import resilienceHighlightedSpeakingImg from "../assets/thumbnails/highlighted_speaking/resilience.jpg";
-import teamworkHighlightedSpeakingImg from "../assets/thumbnails/highlighted_speaking/teamwork.jpg";
+import changeHighlightedSpeakingImg from "../assets/highlighted_speaking/change.jpg";
+import resilienceHighlightedSpeakingImg from "../assets/highlighted_speaking/resilience.jpg";
+import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamwork.jpg";
 ---
 
 <BaseLayout pageTitle="Home">
@@ -151,13 +147,13 @@ import teamworkHighlightedSpeakingImg from "../assets/thumbnails/highlighted_spe
         <div class="lg:flex lg:flex-col lg:items-center">
           <!-- Images -->
           <div class="flex flex-row shadow-lg">
-            <Image
-              src={moonshotCoverImage}
+            <img
+              src={"/img/books/moonshot_cover.png"}
               alt="Cover of Moonshot."
               class="w-1/2 lg:max-w-[15em] lg:h-auto rounded-tl-3xl"
             />
-            <Image
-              src={spacemanCoverImage}
+            <img
+              src={"/img/books/cover2.jpg"}
               alt="Cover of Spaceman."
               class="w-1/2 lg:max-w-[15em] lg:h-auto rounded-tr-3xl"
             />
