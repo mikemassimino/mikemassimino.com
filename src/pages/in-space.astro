@@ -1,30 +1,23 @@
 ---
+import { Image } from "astro:assets";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
 
-const imageNames = [
-  "s125e009916_orig.jpg",
-  "s125e009398_orig.jpg",
-  "S109E5063_orig.jpg",
-  "S109E5386_orig.jpg",
-  "s109e5402_orig.jpg",
-  "S109E5688_orig.jpg",
-  "S109E5722_orig.jpg",
-  "s125e006592_orig.jpg",
-  "s125e007537_orig.jpg",
-  "s125e007903_orig.jpg",
-  "s125e009381_orig.jpg",
-  "s125e009840_orig.jpg",
-  "s125e011491_orig.jpg",
-  "s125e012138_orig.jpg",
-  "s125e012204_orig.jpg",
-  "sts109-326-008_orig.jpg",
-  "sts109-326-031_orig.jpg",
-  "sts109-328-018_orig.jpg",
-];
+// Import images eagerly so their paths are resolved at build time
+const fullImages = import.meta.glob<{ default: string }>('/src/assets/in_space/in_space/*.{jpeg,jpg,png,gif}', { eager: true });
 
-// Paths for full-size and thumbnail images
-const fullImagePaths = imageNames.map((name) => `/src/assets/in_space/in_space/${name}`);
-const thumbnailPaths = imageNames.map((name) => `/src/assets/in_space/in_space_thumbnails/${name}`);
+// Convert the imported objects into an array with filenames
+const fullImageEntries = Object.entries(fullImages).map(([path, module]) => ({
+  src: module.default,
+  filename: path.split("/").pop(), // Extract the filename
+}));
+
+// Match thumbnails with full images based on filenames
+const galleryImages = fullImageEntries.map((fullImg) => {
+  // const thumbnail = thumbnailImageEntries.find(thumb => thumb.filename === fullImg.filename);
+  return {
+    fullSrc: fullImg.src,
+  };
+});
 ---
 
 <BasePageLayout pageTitle="In Space">
@@ -34,14 +27,16 @@ const thumbnailPaths = imageNames.map((name) => `/src/assets/in_space/in_space_t
   <!-- Gallery Grid -->
   <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 px-16 mb-12">
     {
-      imageNames.map((name, index) => (
-        <a data-fslightbox="gallery" href={fullImagePaths[index]}>
-          <img
-            src={thumbnailPaths[index]}
-            alt={`Space Image ${index + 1}`}
-            class="w-full h-auto rounded-lg shadow-md transition-transform hover:scale-105"
-          />
-        </a>
+      galleryImages.map((image, index) => (
+        // <a data-fslightbox="gallery" href={image.fullSrc}>
+        <Image
+          src={image.fullSrc}
+          alt={`Space Image ${index + 1}`}
+          class="w-full h-auto rounded-lg shadow-md transition-transform hover:scale-105"
+          width={900}
+          height={500}
+        />
+        // </a>
       ))
     }
   </div>
