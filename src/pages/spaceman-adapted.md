@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/BookLayout.astro
 title: Spaceman (Adapted for Young Readers)
-coverImage: "src/assets/books/spaceman_adapted.jpg"
+coverImage: "/img/books/spaceman_adapted.jpg"
 coverImageAlt: "The cover of 'Spaceman (Adapted for Young Readers)'."
 ---
 
@@ -13,9 +13,8 @@ Spaceman takes readers on Mike's unlikely ride from Earth to space, showing the 
 
 # Order *Spaceman (Adapted for Young Readers)*
 
-## Order (US)
-
 - [@Amazon](https://www.amazon.com/Spaceman-Adapted-Young-Readers-Astronaut-ebook/dp/B07V1287Y6/)
+- [@Random House Children's](https://www.rhcbooks.com/books/609745/spaceman-(adapted-for-young-readers)/?ref=PRH1F48A29EC7&aid=randohouseinc4553-20&linkid=PRH1F48A29EC7)
 
 
 # Praise for *Spaceman (Adapted for Young Raders)*

@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import BasePageLayout from "../layouts/BasePageLayout.astro";
+
+// Import images eagerly so their paths are resolved at build time
+const fullImages = import.meta.glob<{ default: string }>('/src/assets/in_space/in_space/*.{jpeg,jpg,png,gif}', { eager: true });
+
+// Convert the imported objects into an array with filenames
+const fullImageEntries = Object.entries(fullImages).map(([path, module]) => ({
+  src: module.default,
+  filename: path.split("/").pop(), // Extract the filename
+}));
+
+// Match thumbnails with full images based on filenames
+const galleryImages = fullImageEntries.map((fullImg) => {
+  // const thumbnail = thumbnailImageEntries.find(thumb => thumb.filename === fullImg.filename);
+  return {
+    fullSrc: fullImg.src,
+  };
+});
+---
+
+<BasePageLayout pageTitle="In Space">
+  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">In Space</h1>
+  <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
+
+  <!-- Gallery Grid -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6 px-16 mb-12">
+    {
+      galleryImages.map((image, index) => (
+        // <a data-fslightbox="gallery" href={image.fullSrc}>
+        <Image
+          src={image.fullSrc}
+          alt={`Space Image ${index + 1}`}
+          class="w-full h-auto rounded-lg shadow-md transition-transform hover:scale-105"
+          width={900}
+          height={500}
+        />
+        // </a>
+      ))
+    }
+  </div>
+</BasePageLayout>
+
+<script>
+  // @ts-ignore
+  import fsLightbox from "fslightbox";
+</script>

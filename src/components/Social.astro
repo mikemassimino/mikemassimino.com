@@ -1,7 +1,27 @@
 ---
+
+import { Image } from "astro:assets";
+
+import facebookIcon from '../assets/social/facebook.svg';
+import instagramIcon from '../assets/social/instagram.svg';
+import linkedinIcon from '../assets/social/linkedin.svg';
+import xIcon from '../assets/social/x.svg';
+import youtubeIcon from '../assets/social/youtube.svg';
+
+
 const { platform, username } = Astro.props;
+
+const icons = {
+  facebook: facebookIcon,
+  instagram: instagramIcon,
+  linkedin: linkedinIcon,
+  x: xIcon,
+  youtube: youtubeIcon
+};
+
+const iconSrc = icons[platform];
 ---
 
 <a href={`https://www.${platform}.com/${username}`}>
-  <img src={`src/assets/social/${platform}.svg`} />
+  <Image src={iconSrc} alt="`${platform} icon"/>
 </a>
