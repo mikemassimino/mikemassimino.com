@@ -29,6 +29,10 @@ import frequentGuestImg from "../assets/daily.jpg";
 import tvMoviesImg from "../assets/bbt.jpg";
 
 import speakingTmpImg from "../assets/mike/image 8.png";
+
+import changeHighlightedSpeakingImg from "../assets/thumbnails/highlighted_speaking/change.jpg";
+import resilienceHighlightedSpeakingImg from "../assets/thumbnails/highlighted_speaking/resilience.jpg";
+import teamworkHighlightedSpeakingImg from "../assets/thumbnails/highlighted_speaking/teamwork.jpg";
 ---
 
 <BaseLayout pageTitle="Home">
@@ -255,36 +259,57 @@ import speakingTmpImg from "../assets/mike/image 8.png";
       </div>
 
       <!-- Speaking cards -->
-      <div class="lg:flex lg:flex-row lg:space-x-16 lg:pb-4">
+      <div class="lg:flex lg:flex-row lg:space-x-16 lg:pb-4 lg:items-center">
         <div class="flex flex-col max-w-96 mx-auto">
-          <Image src={speakingTmpImg} alt="Mike speaking." class="rounded-t-2xl aspect-video object-cover" />
+          <a href="https://vimeo.com/673764082" rel="noreferrer noopener" target="_blank">
+            <Image
+              src={teamworkHighlightedSpeakingImg}
+              alt="Mike speaking."
+              class="rounded-t-2xl aspect-video object-cover"
+            />
+          </a>
           <div class="px-5 pb-6 bg-blue rounded-b-2xl">
-            <h3 class="text-white font-jost mt-4 text-[20px]">Massimino on Persistence</h3>
+            <h3 class="text-white font-jost mt-4 mb-2 text-[20px]">On Teamwork and Leadership</h3>
             <p class="text-body text-white font-roboto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat maximus dolor ornare
-              congue. Vivamus ultrices tincidunt dolor nec iaculis.
+              Individual accomplishments are needed, but the success of the team is most important. In our complex
+              world, not everyone can be good at everything. But by pooling our abilities, we can be good at everything
+              as a team.
             </p>
           </div>
         </div>
 
         <div class="lg:flex flex-col max-w-96 mx-auto hidden">
-          <img src="src/assets/mike/image 8.png" class="rounded-t-2xl aspect-video object-cover" />
+          <a href="https://vimeo.com/996710486" rel="noreferrer noopener" target="_blank">
+            <Image
+              src={resilienceHighlightedSpeakingImg}
+              alt="Mike speaking."
+              class="rounded-t-2xl aspect-video object-cover"
+            />
+          </a>
           <div class="px-5 pb-6 bg-blue rounded-b-2xl">
-            <h3 class="text-white font-jost mt-4 text-[20px]">Massimino on Persistence</h3>
+            <h3 class="text-white font-jost mt-4 mb-2 text-[20px]">Resilience in the Face of Adversity</h3>
             <p class="text-body text-white font-roboto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat maximus dolor ornare
-              congue. Vivamus ultrices tincidunt dolor nec iaculis.
+              Sometimes forces out of our control can make moving forward difficult. In spite of our best efforts we
+              often get knocked down repeatedly. But we need to find a way around that next obstacle. Mike encourages
+              audiences: When the odds are against you, do it anyway.
             </p>
           </div>
         </div>
 
         <div class="lg:flex flex-col max-w-96 mx-auto hidden">
-          <img src="src/assets/mike/image 8.png" class="rounded-t-2xl aspect-video object-cover" />
+          <a href="https://vimeo.com/998000697" rel="noreferrer noopener" target="_blank">
+            <Image
+              src={changeHighlightedSpeakingImg}
+              alt="Mike speaking."
+              class="rounded-t-2xl aspect-video object-cover"
+            />
+          </a>
           <div class="px-5 pb-6 bg-blue rounded-b-2xl">
-            <h3 class="text-white font-jost mt-4 text-[20px]">Massimino on Persistence</h3>
+            <h3 class="text-white font-jost mt-4 mb-2 text-[20px]">Accepting Organizational & Technological Change</h3>
             <p class="text-body text-white font-roboto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consequat maximus dolor ornare
-              congue. Vivamus ultrices tincidunt dolor nec iaculis.
+              In today’s spaceships, AI performs many of the decision making tasks previously done by astronauts. But
+              the path getting there was not easy. Mike encourages audiences to embrace new technologies to give them
+              the competitive edge they need in meeting the challenges of a dynamic and uncertain world.
             </p>
           </div>
         </div>
@@ -302,3 +327,8 @@ import speakingTmpImg from "../assets/mike/image 8.png";
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // @ts-ignore
+  import fsLightbox from "fslightbox";
+</script>
