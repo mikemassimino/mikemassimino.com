@@ -13,18 +13,12 @@ import { navigationLinks } from '../config/navigationLinks.mjs';
 </div>
 
 <!-- Mobile menu dropdown (hidden by default) -->
-<div id="mobile-menu" class="hidden fixed inset-x-0 top-0 h-[60vh] rounded-b-3xl bg-white bg-opacity-80 backdrop-blur-xl z-30 pt-20">
+<div id="mobile-menu" class="hidden fixed inset-x-0 top-0 h-[85vh] bg-white bg-opacity-40 backdrop-blur-xl z-30 pt-20 rounded-b-3xl">
   <div class="container mx-auto px-4">
-    <ul class="flex flex-col items-center gap-6">
+    <ul class="flex flex-col items-center gap-6" id="mobile-nav-links">
       {
         navigationLinks.map((page) => (
-          <li
-            class={
-              currentPath === page[1]
-                ? "font-jost text-[20px] bg-gradient-to-r from-orange to-red bg-[length:100%_3.5px] bg-no-repeat bg-bottom"
-                : "font-jost text-[20px]"
-            }
-          >
+          <li data-path={page[1]} class="nav-item font-jost text-[20px]">
             <a href={page[1]}>{page[0]}</a>
           </li>
         ))
@@ -45,16 +39,10 @@ import { navigationLinks } from '../config/navigationLinks.mjs';
 
 <!-- Desktop menu -->
 <div class="hidden lg:flex items-center">
-  <ul class="flex gap-x-4 mr-32">
+  <ul class="flex gap-x-4 mr-32" id="desktop-nav-links">
     {
       navigationLinks.map((page) => (
-        <li
-          class={
-            currentPath === page[1]
-              ? "font-jost text-[20px] bg-gradient-to-r from-orange to-red bg-[length:100%_3.5px] bg-no-repeat bg-bottom"
-              : "font-jost text-[20px]"
-          }
-        >
+        <li data-path={page[1]} class="nav-item font-jost text-[20px]">
           <a href={page[1]}>{page[0]}</a>
         </li>
       ))
@@ -76,6 +64,7 @@ import { navigationLinks } from '../config/navigationLinks.mjs';
     const hamburgerButton = document.getElementById('hamburger-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
+    // Toggle hamburger menu
     if (hamburgerButton && mobileMenu) {
       hamburgerButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
@@ -83,13 +72,13 @@ import { navigationLinks } from '../config/navigationLinks.mjs';
         // Prevent scrolling when menu is open
         document.body.classList.toggle('overflow-hidden');
         
-        // Change hamburger to X when open (optional enhancement)
+        // Change hamburger to X when open
         const hamburgerIcon = hamburgerButton.querySelector('svg');
         if (hamburgerIcon) {
           if (mobileMenu.classList.contains('hidden')) {
-            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>';
           } else {
-            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>';
           }
         }
       });
@@ -104,10 +93,41 @@ import { navigationLinks } from '../config/navigationLinks.mjs';
           // Reset hamburger icon
           const hamburgerIcon = hamburgerButton.querySelector('svg');
           if (hamburgerIcon) {
-            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>';
           }
         });
       });
     }
+    
+    // Set active nav link
+    const highlightActiveLink = () => {
+      const currentPath = window.location.pathname;
+      
+      // Get all nav items
+      const navItems = document.querySelectorAll('.nav-item');
+      
+      // Remove active class from all items first
+      navItems.forEach(item => {
+        item.classList.remove('bg-gradient-to-r', 'from-orange', 'to-red', 'bg-[length:100%_3.5px]', 'bg-no-repeat', 'bg-bottom');
+      });
+      
+      // Find matching items and add active class
+      navItems.forEach(item => {
+        const itemPath = item.getAttribute('data-path');
+        
+        // Check if current path exactly matches the nav item path
+        // or if we're on a subpage and the nav item is a parent section
+        if (currentPath === itemPath || 
+            (itemPath !== '/' && currentPath.startsWith(itemPath))) {
+          item.classList.add('bg-gradient-to-r', 'from-orange', 'to-red', 'bg-[length:100%_3.5px]', 'bg-no-repeat', 'bg-bottom');
+        }
+      });
+    };
+    
+    // Run on page load
+    highlightActiveLink();
+    
+    // Re-run if SPA navigation is used (optional, for client routing)
+    window.addEventListener('popstate', highlightActiveLink);
   });
 </script>
