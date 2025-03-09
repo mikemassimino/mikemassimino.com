@@ -1,32 +1,32 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import tailwind from '@astrojs/tailwind';
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mikemassimino.com',
+  site: "https://mikemassimino.com",
   integrations: [tailwind()],
   redirects: {
-    '/2funnyastronauts': {
+    "/2funnyastronauts": {
       status: 301,
-      destination: '/media',
+      destination: "/media",
     },
-    '/about-this-site': {
+    "/about-this-site": {
       status: 301,
-      destination: '/',
+      destination: "/",
     },
-    '/about': {
+    "/about": {
       status: 301,
-      destination: '/biography',
+      destination: "/biography",
     },
-    '/in-space': {
+    "/in-space": {
       status: 301,
-      destination: '/photos',
+      destination: "/photos",
     },
-    '/speaker': {
+    "/speaker": {
       status: 301,
-      destination: '/speaking',
-    }
-  }
+      destination: "/speaking",
+    },
+  },
 });

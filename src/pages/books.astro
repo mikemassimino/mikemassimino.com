@@ -5,36 +5,63 @@ import OutlinedButton from "../components/OutlinedButton.astro";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
 
 const books = [
-  { title: "Moonshot", cover: "/img/books/moonshot_cover.png", link: "/moonshot" },
+  {
+    title: "Moonshot",
+    cover: "/img/books/moonshot_cover.png",
+    link: "/moonshot",
+  },
   { title: "Spaceman", cover: "/img/books/cover2.jpg", link: "/spaceman" },
-  { title: "Spaceman (adapted)", cover: "/img/books/spaceman_adapted.jpg", link: "/spaceman-adapted" },
+  {
+    title: "Spaceman (adapted)",
+    cover: "/img/books/spaceman_adapted.jpg",
+    link: "/spaceman-adapted",
+  },
 ];
 ---
 
 <BasePageLayout>
-  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">Mike's Books</h1>
+  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">
+    Mike's Books
+  </h1>
 
   <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
 
-  <p class="mx-auto font-roboto text-md text-gray max-w-md lg:max-w-2xl lg:text-xl lg:mb-8 lg:leading-relaxed">
-    In addition to being an astronaut, Mike is also a New York Times bestselling author! He has written three books:
+  <p
+    class="mx-auto font-roboto text-md text-gray max-w-md lg:max-w-2xl lg:text-xl lg:mb-8 lg:leading-relaxed"
+  >
+    In addition to being an astronaut, Mike is also a New York Times bestselling
+    author! He has written three books:
 
-    <em class="font-exo">Moonshot: A NASA Astronaut's Guide To Achieving The Impossible</em>, <em class="font-exo"
-      >Spaceman: An Astronaut's Unlikely Journey to Unlock the Secrets of the Universe</em
+    <em class="font-exo"
+      >Moonshot: A NASA Astronaut's Guide To Achieving The Impossible</em
+    >, <em class="font-exo"
+      >Spaceman: An Astronaut's Unlikely Journey to Unlock the Secrets of the
+      Universe</em
     >, and, most recently for Mike's younger fans, <em class="font-exo"
-      >Spaceman (Adapted for Young Readers): The True Story of a Young Boy's Journey to Becoming an Astronaut</em
+      >Spaceman (Adapted for Young Readers): The True Story of a Young Boy's
+      Journey to Becoming an Astronaut</em
     >.
   </p>
 
-  <div class="mt-4 space-y-4 grid grid-cols-1 md:grid-cols-3 md:space-y-0 md:space-x-8">
+  <div
+    class="mt-4 space-y-4 grid grid-cols-1 md:grid-cols-3 md:space-y-0 md:space-x-8"
+  >
     {
       books.map((book) => (
         <div class="bg-hero-gradient bg-cover p-3 rounded-xl shadow-xl md:mb-0">
           <a href={book.link}>
-            <img src={book.cover} alt={book.title} loading="eager" class="h-72 lg:h-96 w-auto aspect-[2/3] mx-auto rounded-md" />
+            <img
+              src={book.cover}
+              alt={book.title}
+              loading="eager"
+              class="h-72 lg:h-96 w-auto aspect-[2/3] mx-auto rounded-md"
+            />
           </a>
           <div class="mt-4 mx-auto w-full">
-            <OutlinedButton text={"Learn more about " + book.title} link={book.link} />
+            <OutlinedButton
+              text={"Learn more about " + book.title}
+              link={book.link}
+            />
           </div>
         </div>
       ))

@@ -32,5 +32,3 @@ title: Terms of Use
 <p>Astro Mike Media LLC or Mike Massimino may revise these Terms of Use at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms of Use.</p>
 <h3>Governing Law</h3>
 <p>Any claim relating to mikemassimino.com shall be governed by the laws of the State of New York without regard to its conflict of law provisions. You agree that any dispute relating to or arising out of your use of this website or any of its contents shall be adjudicated exclusively in the state or federal courts located in New York, NY and you hereby waive any claims of inconvenience as to the location of such courts.</p>
-
-

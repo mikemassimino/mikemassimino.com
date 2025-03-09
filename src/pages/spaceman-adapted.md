@@ -11,15 +11,14 @@ From the time he was seven-years-old and saw Apollo 11 land on the moon, Mike Ma
 
 Spaceman takes readers on Mike's unlikely ride from Earth to space, showing the breathtaking wonder of science and technology along the way.
 
-# Order *Spaceman (Adapted for Young Readers)*
+# Order _Spaceman (Adapted for Young Readers)_
 
 - [@Amazon](https://www.amazon.com/Spaceman-Adapted-Young-Readers-Astronaut-ebook/dp/B07V1287Y6/)
-- [@Random House Children's](https://www.rhcbooks.com/books/609745/spaceman-(adapted-for-young-readers)/?ref=PRH1F48A29EC7&aid=randohouseinc4553-20&linkid=PRH1F48A29EC7)
+- [@Random House Children's](<https://www.rhcbooks.com/books/609745/spaceman-(adapted-for-young-readers)/?ref=PRH1F48A29EC7&aid=randohouseinc4553-20&linkid=PRH1F48A29EC7>)
 
+# Praise for _Spaceman (Adapted for Young Raders)_
 
-# Praise for *Spaceman (Adapted for Young Raders)*
-
-> “Mike Massimino is a spaceman through and through. In this edition for young people, he tells us how hard work can take you out of this world. He believes in teamwork, and he never gives up. Prepare to be inspired.”  
+> “Mike Massimino is a spaceman through and through. In this edition for young people, he tells us how hard work can take you out of this world. He believes in teamwork, and he never gives up. Prepare to be inspired.”
 
 **Bill Nye the Science Guy**, CEO, The Planetary Society
 

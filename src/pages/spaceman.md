@@ -5,7 +5,7 @@ coverImage: "/img/books/cover2.jpg"
 coverImageAlt: "The cover of 'Spaceman'."
 ---
 
-*Mike’s first book, a NY Times Bestseller!*
+_Mike’s first book, a NY Times Bestseller!_
 
 Mike’s space dreams were born the day Neil Armstrong set foot on the moon, but fulfilling them seemed unlikely, if not impossible for a working-class kid with a fear of heights. But Mike wouldn’t be deterred. He catapulted himself to Columbia and then MIT, was rejected three times by NASA, and still made it to space.
 
@@ -13,9 +13,9 @@ Science meets the most thrilling adventures in Spaceman, Mike’s story of never
 
 **Want more? Mike has another book, learn about it [here](/moonshot)!**
 
-*Big news! Mike has published a young readers adaption of his book Spaceman. Since publishing the original Spaceman book, he has enjoyed many conversations with young readers wondering about how he made it to space. The young readers adoption is specifically tailored to those readers, with an emphasis the early years that led Mike to the astronaut program. Read the newsletter here for more information!*
+_Big news! Mike has published a young readers adaption of his book Spaceman. Since publishing the original Spaceman book, he has enjoyed many conversations with young readers wondering about how he made it to space. The young readers adoption is specifically tailored to those readers, with an emphasis the early years that led Mike to the astronaut program. Read the newsletter here for more information!_
 
-# Order *Spaceman*
+# Order _Spaceman_
 
 ## Order (US)
 
@@ -31,49 +31,48 @@ Science meets the most thrilling adventures in Spaceman, Mike’s story of never
 
 ## Order (UK)
 
-- [@Amazon UK](https://www.amazon.co.uk/Spaceman-Astronauts-Unlikely-Journey-Universe/dp/1471149528/ref=sr_1_1?ie=UTF8&amp;qid=1475568133&amp;sr=8-1&amp;keywords=spaceman)
+- [@Amazon UK](https://www.amazon.co.uk/Spaceman-Astronauts-Unlikely-Journey-Universe/dp/1471149528/ref=sr_1_1?ie=UTF8&qid=1475568133&sr=8-1&keywords=spaceman)
 - [@Waterstones](https://www.waterstones.com/book/spaceman/mike-massimino/tanner-colby/9781471149528)
 - [@WHSmiths](https://www.whsmith.co.uk/products/spaceman-an-astronauts-unlikely-journey-to-unlock-the-secrets-of-the-universe/9781471149542)
 
+# Praise for _Spaceman_
 
-# Praise for *Spaceman*
-
-> “Mike Massimino writes about space with an astronaut's eye and an engineer's precision. You'll be impressed with his journey and his perspective on where a well-developed space program can take us in the future.”  
+> “Mike Massimino writes about space with an astronaut's eye and an engineer's precision. You'll be impressed with his journey and his perspective on where a well-developed space program can take us in the future.”
 
 **Senator John Glenn**
 
 ---
 
-> “Every generation of astronauts needs a storyteller - a person with wit, humor, and passion who has lived out collective dreams of space exploration and returned to tell us all about it. Mike Massimino is that person. He's that astronaut. And this is his story.”  
+> “Every generation of astronauts needs a storyteller - a person with wit, humor, and passion who has lived out collective dreams of space exploration and returned to tell us all about it. Mike Massimino is that person. He's that astronaut. And this is his story.”
 
 **Neil deGrasse Tyson**
 
 ---
 
-> “Inspired by moonwalkers, Mike grew up, became an astronaut, and fixed the Hubble Space Telescope, all while remaining some kinda’ humble. You can’t help but follow him from Long Island to the bottom of the spacewalk practice pool, then 350 miles up and back. He’s a spaceman through and through; he tells how hard work can take you out of this world.”  
+> “Inspired by moonwalkers, Mike grew up, became an astronaut, and fixed the Hubble Space Telescope, all while remaining some kinda’ humble. You can’t help but follow him from Long Island to the bottom of the spacewalk practice pool, then 350 miles up and back. He’s a spaceman through and through; he tells how hard work can take you out of this world.”
 
 **Bill Nye the Science Guy**, CEO, The Planetary Society
 
 ---
 
-> “During astronaut training, Massimino was merely adequate at most tasks, never the best. But after returning to Earth, he began lecturing on his experiences, and he decided, ‘Maybe I could be one of the best at telling the story of space.’ If *Spaceman* is any indication, he might well be.”  
+> “During astronaut training, Massimino was merely adequate at most tasks, never the best. But after returning to Earth, he began lecturing on his experiences, and he decided, ‘Maybe I could be one of the best at telling the story of space.’ If _Spaceman_ is any indication, he might well be.”
 
 **[NY Times Book Review](https://www.nytimes.com/2016/11/25/books/review/new-books-about-space.html)**
 
 ---
 
-> “Massimino’s incredible journeys, filled with grit, courage, suspense and thrills, are told with such candor and delight, that for a brief moment I felt I’d finally made it to space too. Read this book and be inspired to reach for the impossible.”  
+> “Massimino’s incredible journeys, filled with grit, courage, suspense and thrills, are told with such candor and delight, that for a brief moment I felt I’d finally made it to space too. Read this book and be inspired to reach for the impossible.”
 
 **Brian Greene**
 
 ---
 
-> “Readers will be delighted and moved by retired astronaut Massimino’s almost childlike wonder and enthusiasm, coupled with his humility, as he recounts the magnificence of space, the camaraderie of NASA in good times and bad, and a genuine gratitude for his good fortune….This is an engaging and uplifting memoir that’s sure to give readers a deeper appreciation for the U.S. space program and inspire some future astronauts.”  
+> “Readers will be delighted and moved by retired astronaut Massimino’s almost childlike wonder and enthusiasm, coupled with his humility, as he recounts the magnificence of space, the camaraderie of NASA in good times and bad, and a genuine gratitude for his good fortune….This is an engaging and uplifting memoir that’s sure to give readers a deeper appreciation for the U.S. space program and inspire some future astronauts.”
 
 **Publishers Weekly**
 
 ---
 
-> “A smooth combination of personal history and immersive storytelling...A vivid, engrossing, and enthusiastically written memoir of aeronautic ambition.”  
+> “A smooth combination of personal history and immersive storytelling...A vivid, engrossing, and enthusiastically written memoir of aeronautic ambition.”
 
 **Kirkus Reviews (starred review)**

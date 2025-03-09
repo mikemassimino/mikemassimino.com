@@ -3,7 +3,10 @@ import { Image } from "astro:assets";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
 
 // Import images eagerly so their paths are resolved at build time
-const fullImages = import.meta.glob<{ default: string }>('/src/assets/in_space/in_space/*.{jpeg,jpg,png,gif}', { eager: true });
+const fullImages = import.meta.glob<{ default: string }>(
+  "/src/assets/in_space/in_space/*.{jpeg,jpg,png,gif}",
+  { eager: true },
+);
 
 // Convert the imported objects into an array with filenames
 const fullImageEntries = Object.entries(fullImages).map(([path, module]) => ({
@@ -21,7 +24,9 @@ const galleryImages = fullImageEntries.map((fullImg) => {
 ---
 
 <BasePageLayout pageTitle="In Space">
-  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">Photos of Mike in Space</h1>
+  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">
+    Photos of Mike in Space
+  </h1>
   <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
 
   <!-- Gallery Grid -->
