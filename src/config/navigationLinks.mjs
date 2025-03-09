@@ -4,5 +4,5 @@ export const navigationLinks = [
   ["Books", "/books"],
   ["Media", "/media"],
   ["Speaking", "/speaking"],
-  ["Photos", "/in-space"],
+  ["Photos", "/photos"],
 ];

@@ -4,6 +4,8 @@ import Social from "./Social.astro";
 const currentPath = Astro.url.pathname;
 
 import { navigationLinks } from "../config/navigationLinks.mjs";
+
+const year = new Date().getFullYear()
 ---
 
 <footer
@@ -46,12 +48,15 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
 
     <!-- Copyright/links -->
     <div class="text-center pb-7 font-jost lg:order-2 lg:pb-0 lg:text-lg">
-      © 2025 Astro Mike Media, LLC | All Rights Reserved
+      © <span id="footer-year">{year}</span> Astro Mike Media, LLC | All Rights Reserved
       <div class="text-gray mt-1">
-        <a href="/privacy-policy" class="underline">Privacy Policy</a> | <a href="terms-of-use" class="underline"
-          >Terms of Use</a
-        >
+        <a href="/privacy-policy" class="underline">Privacy Policy</a> |
+        <a href="/terms-of-use" class="underline">Terms of Use</a>
       </div>
     </div>
   </div>
 </footer>
+
+<script is:inline>
+  document.getElementById("footer-year").innerText = new Date().getFullYear();
+</script>
