@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prettier:format": "npx prettier . --write",
+    "prettier:check": "npx prettier . --check"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.4",
