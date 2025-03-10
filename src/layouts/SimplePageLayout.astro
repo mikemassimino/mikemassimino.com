@@ -4,23 +4,17 @@ const { frontmatter } = Astro.props;
 ---
 
 <BasePageLayout pageTitle={frontmatter.title}>
-  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">
+  <h1 class="my-5 text-center font-jost text-header lg:text-4xl xl:mt-12">
     {frontmatter.title}
   </h1>
 
-  <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
+  <hr class="mx-auto mb-5 w-40 border-lightgray xl:mb-8" />
 
   <div class="mx-auto max-w-96 lg:float-right lg:ml-4 xl:w-full xl:max-w-md">
-    <img
-      src={frontmatter.mainImage}
-      alt={frontmatter.mainImageAlt}
-      class="rounded-lg"
-    />
-    <p class="pt-1 italic text-right">{frontmatter.mainImageAlt}</p>
+    <img src={frontmatter.mainImage} alt={frontmatter.mainImageAlt} class="rounded-lg" />
+    <p class="pt-1 text-right italic">{frontmatter.mainImageAlt}</p>
   </div>
-  <div
-    class="markdown-content font-roboto text-body md:text-lg text-gray space-y-4 lg:space-y-8 mt-4"
-  >
+  <div class="markdown-content mt-4 space-y-4 font-roboto text-body text-gray md:text-lg lg:space-y-8">
     <slot />
   </div>
 </BasePageLayout>
@@ -31,11 +25,11 @@ const { frontmatter } = Astro.props;
   }
 
   .markdown-content h1 {
-    @apply text-3xl font-exo text-red;
+    @apply font-exo text-3xl text-red;
   }
 
   .markdown-content h2 {
-    @apply text-xl font-exo;
+    @apply font-exo text-xl;
   }
 
   .markdown-content a {

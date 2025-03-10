@@ -6,18 +6,9 @@ import { Image } from "astro:assets";
 import massLogo from "../assets/header logo.png";
 ---
 
-<header
-  class="my-3 h-16 bg-white p-4 mx-auto flex justify-between items-center relative"
->
+<header class="relative mx-auto my-3 flex h-16 items-center justify-between bg-white p-4">
   <!-- Logo on the left -->
-  <a href="/"
-    ><Image
-      src={massLogo}
-      alt="Mike Massimino logo."
-      loading="eager"
-      class="z-10"
-    /></a
-  >
+  <a href="/"><Image src={massLogo} alt="Mike Massimino logo." loading="eager" class="z-10" /></a>
 
   <Navigation />
 </header>

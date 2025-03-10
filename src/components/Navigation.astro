@@ -4,30 +4,17 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
 ---
 
 <!-- Hamburger menu (visible on small screens) -->
-<div class="block lg:hidden z-40">
+<div class="z-40 block lg:hidden">
   <button id="hamburger-button" class="text-gray2 focus:outline-none">
     <!-- Hamburger icon -->
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      class="h-6 w-6"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="3"
-        d="M4 6h16M4 12h16M4 18h16"></path>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>
     </svg>
   </button>
 </div>
 
 <!-- Mobile menu dropdown (hidden by default) -->
-<div
-  id="mobile-menu"
-  class="hidden fixed inset-x-0 top-0 h-[85vh] bg-white bg-opacity-40 backdrop-blur-xl z-30 pt-20 rounded-b-3xl"
->
+<div id="mobile-menu" class="fixed inset-x-0 top-0 z-30 hidden h-[85vh] rounded-b-3xl bg-white bg-opacity-40 pt-20 backdrop-blur-xl">
   <div class="container mx-auto px-4">
     <ul class="flex flex-col items-center gap-6" id="mobile-nav-links">
       {
@@ -41,7 +28,7 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
       <li class="mt-4 w-full max-w-xs">
         <a href="https://mikemassimino.paperform.co/" class="block w-full">
           <div
-            class="flex text-center justify-center bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] rounded-2xl text-white font-reddit font-light text-[20px] px-3 py-2 uppercase"
+            class="flex justify-center rounded-2xl bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] px-3 py-2 text-center font-reddit text-[20px] font-light uppercase text-white"
           >
             Contact
           </div>
@@ -52,8 +39,8 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
 </div>
 
 <!-- Desktop menu -->
-<div class="hidden lg:flex items-center">
-  <ul class="flex gap-x-4 mr-32" id="desktop-nav-links">
+<div class="hidden items-center lg:flex">
+  <ul class="mr-32 flex gap-x-4" id="desktop-nav-links">
     {
       navigationLinks.map((page) => (
         <li data-path={page[1]} class="nav-item font-jost text-[20px]">
@@ -63,9 +50,9 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
     }
   </ul>
   <!-- Contact button -->
-  <a href="https://mikemassimino.paperform.co/" class="w-full mr-8 z-20">
+  <a href="https://mikemassimino.paperform.co/" class="z-20 mr-8 w-full">
     <div
-      class="flex text-center justify-center bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] rounded-2xl text-white font-reddit font-light text-[20px] px-3 py-1 lg:py-2 uppercase"
+      class="flex justify-center rounded-2xl bg-gradient-to-b from-[#DA5F6B] via-[#E38A4C] to-[#F0CB78] px-3 py-1 text-center font-reddit text-[20px] font-light uppercase text-white lg:py-2"
     >
       Contact
     </div>
@@ -90,11 +77,9 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
         const hamburgerIcon = hamburgerButton.querySelector("svg");
         if (hamburgerIcon) {
           if (mobileMenu.classList.contains("hidden")) {
-            hamburgerIcon.innerHTML =
-              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>';
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>';
           } else {
-            hamburgerIcon.innerHTML =
-              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>';
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>';
           }
         }
       });
@@ -109,8 +94,7 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
           // Reset hamburger icon
           const hamburgerIcon = hamburgerButton.querySelector("svg");
           if (hamburgerIcon) {
-            hamburgerIcon.innerHTML =
-              '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>';
+            hamburgerIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>';
           }
         });
       });
@@ -125,14 +109,7 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
 
       // Remove active class from all items first
       navItems.forEach((item) => {
-        item.classList.remove(
-          "bg-gradient-to-r",
-          "from-orange",
-          "to-red",
-          "bg-[length:100%_3.5px]",
-          "bg-no-repeat",
-          "bg-bottom",
-        );
+        item.classList.remove("bg-gradient-to-r", "from-orange", "to-red", "bg-[length:100%_3.5px]", "bg-no-repeat", "bg-bottom");
       });
 
       // Find matching items and add active class
@@ -141,18 +118,8 @@ import { navigationLinks } from "../config/navigationLinks.mjs";
 
         // Check if current path exactly matches the nav item path
         // or if we're on a subpage and the nav item is a parent section
-        if (
-          currentPath === itemPath ||
-          (itemPath !== "/" && currentPath.startsWith(itemPath))
-        ) {
-          item.classList.add(
-            "bg-gradient-to-r",
-            "from-orange",
-            "to-red",
-            "bg-[length:100%_3.5px]",
-            "bg-no-repeat",
-            "bg-bottom",
-          );
+        if (currentPath === itemPath || (itemPath !== "/" && currentPath.startsWith(itemPath))) {
+          item.classList.add("bg-gradient-to-r", "from-orange", "to-red", "bg-[length:100%_3.5px]", "bg-no-repeat", "bg-bottom");
         }
       });
     };

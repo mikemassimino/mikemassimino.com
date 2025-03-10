@@ -54,42 +54,23 @@ const videos = {
 ---
 
 <BasePageLayout>
-  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">
-    Mike in the Media
-  </h1>
+  <h1 class="my-5 text-center font-jost text-header lg:text-4xl xl:mt-12">Mike in the Media</h1>
 
-  <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
+  <hr class="mx-auto mb-5 w-40 border-lightgray xl:mb-8" />
 
   <div class="flex flex-col lg:flex-row lg:items-start">
-    <p
-      class="font-roboto text-md text-gray text-center lg:text-left lg:max-w-2xl lg:text-lg lg:leading-relaxed lg:ml-16 lg:mr-3"
-    >
-      In addition to speaking, Mike is a frequent guest on television news
-      programs, talk shows, late night TV, and even sitcoms including The Big
-      Bang Theory. He has appeared on Wired, Netflix, Good Morning America, Late
-      Show with David Letterman, Fox News, Today, CNN, and more. Check out some
-      highlights below. For media inquiries, contact him
-      <a href="https://mikemassimino.paperform.co/" class="text-orange">here</a
-      >!
+    <p class="text-md text-center font-roboto text-gray lg:ml-16 lg:mr-3 lg:max-w-2xl lg:text-left lg:text-lg lg:leading-relaxed">
+      In addition to speaking, Mike is a frequent guest on television news programs, talk shows, late night TV, and even sitcoms including The Big Bang Theory.
+      He has appeared on Wired, Netflix, Good Morning America, Late Show with David Letterman, Fox News, Today, CNN, and more. Check out some highlights below.
+      For media inquiries, contact him
+      <a href="https://mikemassimino.paperform.co/" class="text-orange">here</a>!
     </p>
 
-    <div class="mt-4 lg:mt-0 lg:ml-6 flex-shrink-0 mx-auto">
-      <a
-        href="https://youtu.be/J1uCJAik83s"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-fslightbox="https://youtu.be/J1uCJAik83s"
-      >
+    <div class="mx-auto mt-4 flex-shrink-0 lg:ml-6 lg:mt-0">
+      <a href="https://youtu.be/J1uCJAik83s" target="_blank" rel="noopener noreferrer" data-fslightbox="https://youtu.be/J1uCJAik83s">
         <div>
-          <img
-            src="https://i1.ytimg.com/vi/J1uCJAik83s/mqdefault.jpg"
-            class="aspect-video w-64 lg:w-80 rounded-lg outline outline-4 outline-blue"
-          />
-          <p
-            class="mt-2 lg:mt-4 text-gray text-center font-roboto text-lg lg:text-lg w-64 lg:w-80"
-          >
-            Introduction to Mike Massimino
-          </p>
+          <img src="https://i1.ytimg.com/vi/J1uCJAik83s/mqdefault.jpg" class="aspect-video w-64 rounded-lg outline outline-4 outline-blue lg:w-80" />
+          <p class="mt-2 w-64 text-center font-roboto text-lg text-gray lg:mt-4 lg:w-80 lg:text-lg">Introduction to Mike Massimino</p>
         </div>
       </a>
     </div>
@@ -98,39 +79,25 @@ const videos = {
   {
     sections.map((section) => (
       <div>
-        <h2 class="text-3xl text-red font-exo mt-8 mb-6 ml-8">{section}</h2>
-        <div class="mt-4 gap-y-6 flex flex-col md:flex-row md:flex-wrap">
+        <h2 class="mb-6 ml-8 mt-8 font-exo text-3xl text-red">{section}</h2>
+        <div class="mt-4 flex flex-col gap-y-6 md:flex-row md:flex-wrap">
           {videos[section]?.map((video) => (
-            <div class="mx-auto md:p-3 md:mb-0 flex-shrink-0 relative">
-              {video.mustWatch && (
-                <p class="absolute bg-yellow p-1 text-black top-0 right-2 font-exo lg:text-xl skew-y-12">
-                  MUST WATCH!
-                </p>
-              )}
+            <div class="relative mx-auto flex-shrink-0 md:mb-0 md:p-3">
+              {video.mustWatch && <p class="absolute right-2 top-0 skew-y-12 bg-yellow p-1 font-exo text-black lg:text-xl">MUST WATCH!</p>}
 
               <a
-                href={
-                  video.id
-                    ? `https://www.youtube.com/watch?v=${video.id}`
-                    : video.link
-                }
+                href={video.id ? `https://www.youtube.com/watch?v=${video.id}` : video.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-fslightbox={video.id ? "gallery" : undefined}
               >
                 <div>
                   <img
-                    src={
-                      video.id
-                        ? `https://i1.ytimg.com/vi/${video.id}/mqdefault.jpg`
-                        : `/img/media/${video.thumbnail_name}.jpg`
-                    }
+                    src={video.id ? `https://i1.ytimg.com/vi/${video.id}/mqdefault.jpg` : `/img/media/${video.thumbnail_name}.jpg`}
                     alt={video.title}
-                    class="aspect-video w-64 lg:w-80 rounded-lg outline outline-4 outline-blue"
+                    class="aspect-video w-64 rounded-lg outline outline-4 outline-blue lg:w-80"
                   />
-                  <p class="mt-2 lg:mt-4 text-gray text-center font-roboto text-lg lg:text-lg w-64 lg:w-80">
-                    {video.title}
-                  </p>
+                  <p class="mt-2 w-64 text-center font-roboto text-lg text-gray lg:mt-4 lg:w-80 lg:text-lg">{video.title}</p>
                 </div>
               </a>
             </div>

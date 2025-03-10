@@ -20,48 +20,29 @@ const books = [
 ---
 
 <BasePageLayout>
-  <h1 class="text-header lg:text-4xl font-jost text-center my-5 xl:mt-12">
-    Mike's Books
-  </h1>
+  <h1 class="my-5 text-center font-jost text-header lg:text-4xl xl:mt-12">Mike's Books</h1>
 
-  <hr class="w-40 mx-auto border-lightgray mb-5 xl:mb-8" />
+  <hr class="mx-auto mb-5 w-40 border-lightgray xl:mb-8" />
 
-  <p
-    class="mx-auto font-roboto text-md text-gray max-w-md lg:max-w-2xl lg:text-xl lg:mb-8 lg:leading-relaxed"
-  >
-    In addition to being an astronaut, Mike is also a New York Times bestselling
-    author! He has written three books:
+  <p class="text-md mx-auto max-w-md font-roboto text-gray lg:mb-8 lg:max-w-2xl lg:text-xl lg:leading-relaxed">
+    In addition to being an astronaut, Mike is also a New York Times bestselling author! He has written three books:
 
-    <em class="font-exo"
-      >Moonshot: A NASA Astronaut's Guide To Achieving The Impossible</em
-    >, <em class="font-exo"
-      >Spaceman: An Astronaut's Unlikely Journey to Unlock the Secrets of the
-      Universe</em
+    <em class="font-exo">Moonshot: A NASA Astronaut's Guide To Achieving The Impossible</em>, <em class="font-exo"
+      >Spaceman: An Astronaut's Unlikely Journey to Unlock the Secrets of the Universe</em
     >, and, most recently for Mike's younger fans, <em class="font-exo"
-      >Spaceman (Adapted for Young Readers): The True Story of a Young Boy's
-      Journey to Becoming an Astronaut</em
+      >Spaceman (Adapted for Young Readers): The True Story of a Young Boy's Journey to Becoming an Astronaut</em
     >.
   </p>
 
-  <div
-    class="mt-4 space-y-4 grid grid-cols-1 md:grid-cols-3 md:space-y-0 md:space-x-8"
-  >
+  <div class="mt-4 grid grid-cols-1 space-y-4 md:grid-cols-3 md:space-x-8 md:space-y-0">
     {
       books.map((book) => (
-        <div class="bg-hero-gradient bg-cover p-3 rounded-xl shadow-xl md:mb-0">
+        <div class="rounded-xl bg-hero-gradient bg-cover p-3 shadow-xl md:mb-0">
           <a href={book.link}>
-            <img
-              src={book.cover}
-              alt={book.title}
-              loading="eager"
-              class="h-72 lg:h-96 w-auto aspect-[2/3] mx-auto rounded-md"
-            />
+            <img src={book.cover} alt={book.title} loading="eager" class="mx-auto aspect-[2/3] h-72 w-auto rounded-md lg:h-96" />
           </a>
-          <div class="mt-4 mx-auto w-full">
-            <OutlinedButton
-              text={"Learn more about " + book.title}
-              link={book.link}
-            />
+          <div class="mx-auto mt-4 w-full">
+            <OutlinedButton text={"Learn more about " + book.title} link={book.link} />
           </div>
         </div>
       ))
