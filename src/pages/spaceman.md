@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/BookLayout.astro
 title: Spaceman
+description: "Details and reviews of Spaceman."
 coverImage: "/img/books/cover2.jpg"
 coverImageAlt: "The cover of 'Spaceman'."
 ---

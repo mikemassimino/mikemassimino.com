@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/SimplePageLayout.astro
 title: Meet Mike
+description: "A short biography of astronaut Mike Massimino."
 mainImage: "/img/mikeinspace.jpg"
 mainImageAlt: "Mike in space."
 ---

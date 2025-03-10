@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/BookLayout.astro
 title: Moonshot
+description: "Details and reviews of Mike's book Moonshot."
 coverImage: "/img/books/moonshot_cover.png"
 coverImageAlt: "The cover of 'Moonshot'."
 ---

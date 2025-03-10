@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/BookLayout.astro
 title: Spaceman (Adapted for Young Readers)
+description: "Details and reviews of Spaceman (Adapted)."
 coverImage: "/img/books/spaceman_adapted.jpg"
 coverImageAlt: "The cover of 'Spaceman (Adapted for Young Readers)'."
 ---

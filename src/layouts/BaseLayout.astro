@@ -6,7 +6,7 @@ import "@fontsource-variable/exo-2";
 import "@fontsource-variable/reddit-sans";
 import "@fontsource-variable/jost";
 
-const { pageTitle } = Astro.props;
+const { pageTitle, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,6 +16,7 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description}>
     <title>{pageTitle} | Mike Massimino</title>
   </head>
   <body>

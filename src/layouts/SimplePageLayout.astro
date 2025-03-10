@@ -3,7 +3,7 @@ import BasePageLayout from "./BasePageLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BasePageLayout pageTitle={frontmatter.title}>
+<BasePageLayout pageTitle={frontmatter.title} description={frontmatter.description}>
   <h1 class="my-5 text-center font-jost text-header lg:text-4xl xl:mt-12">
     {frontmatter.title}
   </h1>

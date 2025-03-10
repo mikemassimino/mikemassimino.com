@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
-const { pageTitle } = Astro.props;
+const { pageTitle, description } = Astro.props;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} description={description}>
   <section class="border-t-2 border-dimmerwhite px-10 pb-8 lg:pb-16">
     <div class="lg:mx-auto lg:max-w-7xl">
       <slot />

@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/SimplePageLayout.astro
 title: Privacy Policy
+description: "Privacy policy for the site."
 ---
 
 <p>Astro Mike Media LLC (&ldquo;Service Provider,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;) respects the privacy of visitors to https://mikemassimino.com (the &ldquo;Site&rdquo;). The following privacy policy (the &ldquo;Policy&rdquo;) covers our collection of information on the Site only, however it is accessed or used (whether on computer, mobile devices or otherwise). The purpose of this Policy is to inform our visitors (&ldquo;you,&rdquo; or &ldquo;your&rdquo;) about the types of information we gather about you when you visit our Site, how we may use that information, with whom it is shared, what choices you have regarding our use of your information and how you may access some of the information you provide to us. This Privacy Policy does not apply to any information you may provide to us, or that we may collect, offline and/or through other means (for example, at a live event, via telephone or through email) or to information collected on any other website or application.</p>

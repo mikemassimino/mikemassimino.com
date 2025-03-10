@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/SimplePageLayout.astro
+description: "Terms of use for this site."
 title: Terms of Use
 ---
 
