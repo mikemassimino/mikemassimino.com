@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 
@@ -25,6 +25,9 @@ import astroMike from "../assets/mike/spaceman_cutout.png";
 
 import frequentGuestImg from "../assets/daily.jpg";
 import tvMoviesImg from "../assets/bbt.jpg";
+
+import spacemanCover from "../assets/books/cover2.jpg";
+import moonshotCover from "../assets/books/moonshot_cover.png";
 
 import changeHighlightedSpeakingImg from "../assets/highlighted_speaking/change.jpg";
 import resilienceHighlightedSpeakingImg from "../assets/highlighted_speaking/resilience.jpg";
@@ -54,7 +57,7 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
     </div>
 
     <div class="relative col-span-5 col-start-1 row-span-2 row-start-5 -mb-24 lg:ml-24">
-      <Image
+      <Picture
         src={astroMike}
         alt="Mike Massimino headshot."
         loading="eager"
@@ -76,12 +79,9 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
       <MeetMike />
     </div>
 
-    <Image
-      src={meetMikeImage}
-      alt="Mike Massimino speaking on stage."
-      loading="eager"
-      class="col-span-4 col-start-1 row-span-2 row-start-7 md:col-span-5 md:col-start-8 md:row-start-2 md:h-auto md:max-w-md lg:row-start-1"
-    />
+    <div class="col-span-4 col-start-1 row-span-2 row-start-7 md:col-span-5 md:col-start-8 md:row-start-2 md:h-auto md:max-w-md lg:row-start-1">
+      <Picture src={meetMikeImage} alt="Mike Massimino speaking on stage." loading="eager" />
+    </div>
 
     <div class="z-10 col-span-4 col-start-5 row-span-1 row-start-7 md:col-span-3 md:col-start-2 md:row-start-8 md:max-w-80">
       <GradientButton link="https://mikemassimino.paperform.co/" text="CONTACT MIKE" />
@@ -114,8 +114,8 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
         <div class="lg:flex lg:flex-col lg:items-center">
           <!-- Images -->
           <div class="flex flex-row shadow-lg">
-            <img src={"/img/books/moonshot_cover.png"} alt="Cover of Moonshot." class="w-1/2 rounded-tl-3xl lg:h-auto lg:max-w-[15em]" />
-            <img src={"/img/books/cover2.jpg"} alt="Cover of Spaceman." class="w-1/2 rounded-tr-3xl lg:h-auto lg:max-w-[15em]" />
+            <Image src={moonshotCover} alt="Cover of Moonshot." class="w-1/2 rounded-tl-3xl lg:h-auto lg:max-w-[15em]" />
+            <Image src={spacemanCover} alt="Cover of Spaceman." class="w-1/2 rounded-tr-3xl lg:h-auto lg:max-w-[15em]" />
           </div>
 
           <!-- Body -->
