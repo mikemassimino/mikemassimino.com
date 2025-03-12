@@ -53,7 +53,7 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
     </div>
 
     <div class="z-10 col-span-4 col-start-5 row-span-1 row-start-4 lg:absolute lg:left-20 lg:col-start-1 lg:row-start-2 lg:mb-40 2xl:ml-32">
-      <h3 class="font-jost text-[28px] sm:text-[32px] md:text-[42px] leading-[2.8rem] text-white lg:text-6xl flex flex-wrap">Mike Massimino</h3>
+      <h3 class="flex flex-wrap font-jost text-[28px] leading-[2.8rem] text-white sm:text-[32px] md:text-[42px] lg:text-6xl">Mike Massimino</h3>
     </div>
 
     <div class="relative col-span-5 col-start-1 row-span-2 row-start-5 -mb-24 lg:ml-24">
@@ -140,12 +140,14 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
         <!-- Card 2 -->
         <div class="flex flex-row lg:h-60">
           <!-- Images -->
-          <Image
-            src={tvMoviesImg}
-            loading="lazy"
-            class="flex aspect-[4/3] w-1/2 rounded-l-3xl object-cover shadow-lg lg:h-auto lg:max-w-[20em]"
-            alt="Mike's cameo on the Big Bang Theory."
-          />
+          <div class="w-1/2">
+            <Image
+              src={tvMoviesImg}
+              loading="lazy"
+              class="flex aspect-[4/3] lg:h-60 h-full rounded-l-3xl object-cover shadow-lg lg:max-w-[20em]"
+              alt="Mike's cameo on the Big Bang Theory."
+            />
+          </div>
 
           <!-- Body -->
           <div class="w-1/2 rounded-r-3xl bg-gradient-to-l from-[#1C1D1E] to-[#0C48A8] p-3 shadow-lg md:pl-6 md:pt-5">
@@ -164,12 +166,14 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
         </div>
         <div class="flex flex-row lg:h-60">
           <!-- Images -->
-          <Image
-            src={frequentGuestImg}
-            loading="lazy"
-            class="flex aspect-[4/3] w-1/2 rounded-l-3xl object-cover shadow-lg lg:h-auto lg:max-w-[20em]"
-            alt="Mike on the television."
-          />
+          <div class="w-1/2 lg:h-60">
+            <Image
+              src={frequentGuestImg}
+              loading="lazy"
+              class="flex lg:h-60 h-full object-cover rounded-l-3xl shadow-lg lg:max-w-[20em]"
+              alt="Mike on the television."
+            />
+          </div>
 
           <!-- Body -->
           <div class="w-1/2 rounded-r-3xl bg-gradient-to-l from-[#1C1D1E] to-[#0C48A8] p-3 shadow-lg md:pl-6 md:pt-5">
