@@ -29,10 +29,10 @@ export default {
         body: "0.875rem",
       },
       fontFamily: {
-        exo: ['"Exo 2 Variable"'],
+        exo: ['"Exo 2 Variable"', "sans-serif"],
         reddit: ['"Reddit Sans Variable"'],
         jost: ['"Jost Variable"'],
-        roboto: ["Roboto"],
+        roboto: ['"Roboto Variable"'],
       },
       gridTemplateRows: {
         hero: "repeat(5, minmax(80px, auto));",
