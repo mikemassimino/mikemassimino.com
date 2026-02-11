@@ -6,6 +6,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import GradientButton from "../components/GradientButton.astro";
 import OutlinedButton from "../components/OutlinedButton.astro";
 import RocketAnimated from "../components/RocketAnimated.astro";
+import InstagramWidget from "../components/InstagramWidget.astro";
 
 import { Content as MeetMike } from "../meet_astro_mike.md";
 
@@ -52,7 +53,7 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
       <GradientButton link="/speaking" text="SPEAKING INFORMATION" />
     </div>
 
-    <div class="z-10 col-span-4 col-start-4 sm:col-start-5 row-span-1 row-start-4 lg:absolute lg:left-20 lg:col-start-1 lg:row-start-2 lg:mb-40 2xl:ml-40">
+    <div class="z-10 col-span-4 col-start-4 row-span-1 row-start-4 sm:col-start-5 lg:absolute lg:left-20 lg:col-start-1 lg:row-start-2 lg:mb-40 2xl:ml-40">
       <h3 class="flex flex-wrap font-jost text-[36px] leading-[2.8rem] text-white sm:text-[32px] md:text-[48px] lg:text-6xl">Mike Massimino</h3>
     </div>
 
@@ -78,6 +79,8 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
     >
       <MeetMike />
     </div>
+
+<div id="insta-trigger" class="h-1"></div>
 
     <div class="col-span-4 col-start-1 row-span-2 row-start-7 md:col-span-5 md:col-start-8 md:row-start-2 md:h-auto md:max-w-md lg:row-start-1">
       <Picture src={meetMikeImage} alt="Mike Massimino speaking on stage." loading="eager" />
@@ -107,8 +110,8 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
   </div>
 
   <!-- Content Cards -->
-  <section class="bg-gradient-to-r from-[#7DCFFF] via-[#2E8FE7] to-[#091E3A] px-3 py-8 lg:pt-40">
-    <div class="mx-auto flex max-w-96 flex-col space-y-8 lg:max-w-none lg:flex-row lg:items-center lg:justify-center lg:space-y-0">
+  <section class="bg-gradient-to-r from-[#7DCFFF] via-[#2E8FE7] to-[#091E3A] py-8 lg:pt-40">
+    <div class="mx-auto flex max-w-96 flex-col space-y-8 px-5 lg:max-w-none lg:flex-row lg:items-center lg:justify-center lg:space-y-0">
       <!-- Card 1 -->
       <div class="lg:order-2 lg:ml-8">
         <div class="lg:flex lg:flex-col lg:items-center">
@@ -144,7 +147,7 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
             <Image
               src={tvMoviesImg}
               loading="lazy"
-              class="flex aspect-[4/3] lg:h-60 h-full rounded-l-3xl object-cover shadow-lg lg:max-w-[20em]"
+              class="flex aspect-[4/3] h-full rounded-l-3xl object-cover shadow-lg lg:h-60 lg:max-w-[20em]"
               alt="Mike's cameo on the Big Bang Theory."
             />
           </div>
@@ -170,7 +173,7 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
             <Image
               src={frequentGuestImg}
               loading="lazy"
-              class="flex lg:h-60 h-full object-cover rounded-l-3xl shadow-lg lg:max-w-[20em]"
+              class="flex h-full rounded-l-3xl object-cover shadow-lg lg:h-60 lg:max-w-[20em]"
               alt="Mike on the television."
             />
           </div>
@@ -193,6 +196,17 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
       </div>
     </div>
   </section>
+
+  <!-- Floating Instagram Widget (Desktop)
+  <div class="relative hidden lg:mx-auto lg:max-w-7xl 2xl:block">
+    <div class="absolute left-4 w-72">
+      <div class="border-gray-200 sticky z-20 overflow-hidden rounded-2xl border bg-white shadow-xl">
+        <div class="max-h-[calc(100vh-120px)] overflow-y-auto p-1">
+          <InstagramWidget username="astromikemassimino" postCount={3} />
+        </div>
+      </div>
+    </div>
+  </div> -->
 
   <!-- Inspiring Talks Section -->
   <section class="bg-gradient-to-r from-[#EDF5FF] to-[#D7E6FF]">
@@ -264,9 +278,43 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
       </div>
     </div>
   </section>
+
+  <div class="lg:mx-auto lg:max-w-7xl">
+    <!-- Mobile Instagram Widget (inline) -->
+    <div class="mt-16 px-5 2xl:hidden">
+      <InstagramWidget />
+    </div>
+  </div>
+
+  <div id="floating-insta" class="pointer-events-none fixed bottom-4 left-4 z-50 hidden opacity-0 transition-opacity duration-500 2xl:block -translate-y-[240px]">
+    <div class="border-gray-200 rounded-2xl border bg-white shadow-xl">
+      <InstagramWidget username="astromikemassimino" postCount={3} />
+    </div>
+  </div>
 </BaseLayout>
 
 <script>
   // @ts-ignore
   import fsLightbox from "fslightbox";
+  const trigger = document.getElementById("insta-trigger");
+  const widget = document.getElementById("floating-insta");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+          // User has scrolled PAST the trigger point
+          widget.classList.remove("opacity-0", "pointer-events-none");
+          widget.classList.add("opacity-100");
+        } else {
+          // User is above the trigger point
+          widget.classList.add("opacity-0", "pointer-events-none");
+          widget.classList.remove("opacity-100");
+        }
+      });
+    },
+    { threshold: 0 },
+  );
+
+  observer.observe(trigger);
 </script>
