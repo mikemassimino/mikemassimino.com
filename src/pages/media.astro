@@ -2,9 +2,47 @@
 import GradientButton from "../components/GradientButton.astro";
 import BasePageLayout from "../layouts/BasePageLayout.astro";
 
-const sections = ["News", "Television", "Appearances", "NASA"];
+const sections = ["Artemis II Coverage", "News", "Television", "Appearances", "NASA"];
 
 const videos = {
+  "Artemis II Coverage": [
+    {
+      title: "Today Show - Mike Live from the Artemis II Launch",
+      thumbnail_name: "artemis2/launch",
+      link: "https://vimeo.com/1179664962/7c75069397",
+      mustWatch: true,
+    },
+    {
+      title: "CNN Anderson Cooper 360 - Crew Breaks Space Travel Record in Historic Moon Flyby",
+      thumbnail_name: "artemis2/flyby",
+      link: "https://vimeo.com/1180888649/b9a4b559ce",
+    },
+    {
+      title: "Today Show - Mike Describes Splashdown Ahead of Artemis' Re-Entry",
+      thumbnail_name: "artemis2/splashdown_describe",
+      link: "https://vimeo.com/1182028861/702349c3d1",
+    },
+    {
+      title: "CNN Erin Burnett Outfront - Artemis II Crew Landing",
+      thumbnail_name: "artemis2/landing",
+      link: "https://vimeo.com/1182244290/fec55a838e",
+    },
+    {
+      title: "The Today Show - Artemis II Crew Safely Back on Earth",
+      thumbnail_name: "artemis2/back_on_earth",
+      link: "https://vimeo.com/1182283476/2eb15c7e8e",
+    },
+    {
+      title: "CNN - Artemis II Crew Discusses Moon Mission, What's Next",
+      thumbnail_name: "artemis2/whats_next",
+      link: "https://vimeo.com/1183889291/21d188c701",
+    },
+    {
+      title: "NBC News - SpaceX Rocket Crashed into the Moon",
+      thumbnail_name: "artemis2/moon_crash",
+      link: "https://vimeo.com/1216157161/5c68b79e92",
+    },
+  ],
   News: [
     { id: "lwFnb1RNX0Y", title: "The Daily Show" },
     { id: "CDPrBqlig2U", title: "Good Morning America (Moonshot)" },
@@ -60,7 +98,8 @@ const videos = {
   <div class="flex flex-col lg:flex-row lg:items-start">
     <p class="text-md text-center font-roboto text-gray lg:ml-16 lg:mr-3 lg:max-w-2xl lg:text-left lg:text-lg lg:leading-relaxed">
       In addition to speaking, Mike is a frequent guest on television news programs, talk shows, late night TV, and even sitcoms including The Big Bang Theory.
-      He has appeared on Wired, Netflix, Good Morning America, Late Show with David Letterman, Fox News, Today, CNN, and more. Check out some highlights below.
+      He has appeared on Wired, Netflix, Good Morning America, Late Show with David Letterman, Fox News, Today, CNN, and more — including extensive live coverage
+      of NASA's Artemis II mission. Check out some highlights below.
       For media inquiries, contact him
       <a href="https://mikemassimino.paperform.co/" class="text-orange">here</a>!
     </p>
@@ -77,7 +116,7 @@ const videos = {
 
   {
     sections.map((section) => (
-      <div>
+      <div id={section === "Artemis II Coverage" ? "artemis-ii" : undefined}>
         <h2 class="mb-6 ml-8 mt-8 font-exo text-3xl text-red">{section}</h2>
         <div class="mt-4 flex flex-col gap-y-6 md:flex-row md:flex-wrap">
           {videos[section]?.map((video) => (
