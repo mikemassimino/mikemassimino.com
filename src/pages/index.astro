@@ -198,10 +198,8 @@ const speakingTopics = [
     </div>
   </div> -->
 
-  <!-- Rocket transition -->
-  <div id="rocket-transition" class="mx-auto hidden max-w-6xl px-10 py-4 lg:block" aria-hidden="true">
-    <RocketAnimated />
-  </div>
+  <!-- Launch transition into the speaking section -->
+  <RocketAnimated />
 
   <!-- Inspiring Talks Section -->
   <section class="bg-gradient-to-r from-[#EDF5FF] to-[#D7E6FF] py-14 lg:py-20">
@@ -251,7 +249,7 @@ const speakingTopics = [
     </div>
   </div>
 
-  <div id="floating-insta" class="pointer-events-none fixed bottom-4 left-4 z-50 hidden opacity-0 transition-opacity duration-500 2xl:block -translate-y-[240px]">
+  <div id="floating-insta" class="pointer-events-none fixed bottom-4 right-4 z-50 hidden opacity-0 transition-opacity duration-500 2xl:block">
     <div class="border-gray-200 rounded-2xl border bg-white shadow-xl">
       <InstagramWidget username="astromikemassimino" postCount={3} />
     </div>
