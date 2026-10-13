@@ -33,6 +33,30 @@ import moonshotCover from "../assets/books/moonshot_cover.png";
 import changeHighlightedSpeakingImg from "../assets/highlighted_speaking/change.jpg";
 import resilienceHighlightedSpeakingImg from "../assets/highlighted_speaking/resilience.jpg";
 import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamwork.jpg";
+
+const speakingTopics = [
+  {
+    title: "On Teamwork and Leadership",
+    description:
+      "Individual accomplishments are needed, but the success of the team is most important. In our complex world, not everyone can be good at everything. But by pooling our abilities, we can be good at everything as a team.",
+    image: teamworkHighlightedSpeakingImg,
+    link: "https://vimeo.com/673764082",
+  },
+  {
+    title: "Resilience in the Face of Adversity",
+    description:
+      "Sometimes forces out of our control can make moving forward difficult. In spite of our best efforts we often get knocked down repeatedly. But we need to find a way around that next obstacle. Mike encourages audiences: When the odds are against you, do it anyway.",
+    image: resilienceHighlightedSpeakingImg,
+    link: "https://vimeo.com/996710486",
+  },
+  {
+    title: "Accepting Organizational & Technological Change",
+    description:
+      "In today’s spaceships, AI performs many of the decision making tasks previously done by astronauts. But the path getting there was not easy. Mike encourages audiences to embrace new technologies to give them the competitive edge they need in meeting the challenges of a dynamic and uncertain world.",
+    image: changeHighlightedSpeakingImg,
+    link: "https://vimeo.com/998000697",
+  },
+];
 ---
 
 <BaseLayout pageTitle="Home" description="The personal website of astronaut and professor Mike Massimino.">
@@ -40,171 +64,126 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
   <Image src={moonImage} alt="Moon." loading="eager" class="absolute right-0 top-0 z-10 h-auto w-32 lg:w-60" />
 
   <!-- Hero Section -->
-  <section class="relative grid grid-cols-8 grid-rows-hero items-center gap-y-5 bg-hero-gradient bg-cover lg:min-h-[400px] lg:pt-8">
-    <h2
-      class="col-span-8 row-span-2 mt-8 text-center font-exo text-2xl capitalize leading-10 text-white lg:col-start-4 lg:row-start-2 lg:mr-8 lg:max-w-3xl lg:text-4xl 2xl:row-start-1 2xl:mt-28 2xl:text-4xl 2xl:leading-snug"
-    >
-      {heroText}
-    </h2>
+  <section class="relative overflow-hidden bg-hero-gradient bg-cover">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 items-end gap-y-6 px-6 pt-10 lg:grid-cols-12 lg:gap-x-8 lg:px-10 lg:pt-16">
+      <!-- Copy column -->
+      <div class="order-1 lg:order-2 lg:col-span-7 lg:col-start-6 lg:self-center lg:pb-24">
+        <h1 class="font-jost text-[44px] leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">Mike Massimino</h1>
 
-    <div
-      class="col-span-4 col-start-4 row-span-1 row-start-3 max-w-fit align-middle sm:mt-12 lg:col-span-3 lg:col-start-5 lg:row-start-4 lg:mt-0 2xl:row-start-3"
-    >
-      <GradientButton link="/speaking" text="SPEAKING INFORMATION" />
-    </div>
+        <p class="mt-5 max-w-xl font-exo text-lg leading-relaxed text-dimwhite sm:text-xl lg:mt-6 lg:text-2xl lg:leading-relaxed">
+          {heroText}
+        </p>
 
-    <div class="z-10 col-span-4 col-start-4 row-span-1 row-start-4 sm:col-start-5 lg:absolute lg:left-20 lg:col-start-1 lg:row-start-2 lg:mb-40 2xl:ml-40">
-      <h3 class="flex flex-wrap font-jost text-[36px] leading-[2.8rem] text-white sm:text-[32px] md:text-[48px] lg:text-6xl">Mike Massimino</h3>
-    </div>
+        <div class="mt-7 max-w-xs lg:mt-9">
+          <GradientButton link="/speaking" text="SPEAKING INFORMATION" />
+        </div>
+      </div>
 
-    <div class="relative col-span-5 col-start-1 row-span-2 row-start-5 -mb-24 lg:ml-24">
-      <Picture
-        src={astroMike}
-        alt="Mike Massimino headshot."
-        loading="eager"
-        class="lg:w-max-w-3xl absolute bottom-0 left-0 w-full max-w-96 object-cover 2xl:ml-48"
-        width={600}
-      />
+      <!-- Portrait column -->
+      <div class="order-2 -mb-px flex justify-center lg:order-1 lg:col-span-5 lg:col-start-1 lg:justify-start">
+        <Picture src={astroMike} alt="Mike Massimino in his NASA flight suit." loading="eager" class="w-full max-w-xs object-contain lg:max-w-md" width={600} />
+      </div>
     </div>
   </section>
 
   <!-- Artemis II News Banner -->
-  <a href="/media#artemis-ii" aria-label="Watch Mike's Artemis II mission coverage." class="relative z-10 block pt-6 sm:pt-16 lg:pt-6">
-    <section class="flex flex-col items-center justify-center gap-2 bg-gradient-to-r from-[#0C48A8] to-[#1C1D1E] px-5 py-4 text-center sm:flex-row sm:gap-4 sm:py-5 sm:text-left lg:py-6">
+  <a href="/media#artemis-ii" aria-label="Watch Mike's Artemis II mission coverage." class="group block bg-gradient-to-r from-[#0C48A8] to-[#1C1D1E]">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 px-6 py-4 text-center sm:flex-row sm:gap-4 sm:py-5 sm:text-left lg:px-10">
       <span class="flex-shrink-0 rounded-full bg-yellow px-3 py-1 font-exo text-xs font-bold uppercase tracking-wide text-black sm:text-sm">In the News</span>
-      <p class="font-roboto text-base text-white sm:text-lg lg:text-xl">
+      <p class="font-roboto text-base text-white sm:text-lg">
         Mike was on the air throughout NASA's <span class="font-bold">Artemis II</span> mission — launch, splashdown, and beyond.
       </p>
-      <span class="whitespace-nowrap font-reddit text-sm font-light text-yellow underline underline-offset-4 sm:text-base">Watch the coverage &rarr;</span>
-    </section>
+      <span class="whitespace-nowrap font-reddit text-sm font-light text-yellow underline underline-offset-4 group-hover:text-white sm:text-base">Watch the coverage &rarr;</span>
+    </div>
   </a>
 
-  <!-- Meet Astro Mike V2 -->
-  <section
-    class="grid grid-cols-8 grid-rows-meet items-center gap-x-3 px-5 pb-16 pt-8 md:grid-cols-12 md:grid-rows-meetMd lg:mx-auto lg:max-w-7xl lg:pb-20 lg:pt-12"
-  >
-    <h2 class="col-span-full col-start-1 row-start-1 font-exo text-header text-red md:col-start-2 lg:mb-5 lg:text-5xl">Meet Astro Mike</h2>
+  <!-- Meet Astro Mike -->
+  <section class="mx-auto max-w-7xl px-6 pb-16 pt-12 lg:px-10 lg:pb-24 lg:pt-20">
+    <div class="grid grid-cols-1 gap-x-12 gap-y-8 lg:grid-cols-12 lg:items-start">
+      <div class="lg:col-span-7">
+        <h2 class="font-exo text-header text-red lg:text-5xl">Meet Astro Mike</h2>
 
-    <div
-      class="col-span-full col-start-1 row-start-2 mb-3 space-y-4 font-roboto text-body text-gray md:col-span-6 md:col-start-2 md:max-w-xl lg:pr-12 lg:text-[16px]"
-    >
-      <MeetMike />
-    </div>
+        <div class="mt-5 space-y-4 font-roboto text-body leading-relaxed text-gray lg:mt-6 lg:text-base lg:leading-relaxed">
+          <MeetMike />
+        </div>
 
-<div id="insta-trigger" class="h-1"></div>
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div class="sm:max-w-xs sm:flex-1"><GradientButton link="https://mikemassimino.paperform.co/" text="CONTACT MIKE" /></div>
+          <div class="sm:max-w-xs sm:flex-1"><OutlinedButton link="/biography" text="FULL BIO" /></div>
+        </div>
+      </div>
 
-    <div class="col-span-4 col-start-1 row-span-2 row-start-7 md:col-span-5 md:col-start-8 md:row-start-2 md:h-auto md:max-w-md lg:row-start-1">
-      <Picture src={meetMikeImage} alt="Mike Massimino speaking on stage." loading="eager" />
-    </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
+        <Picture src={meetMikeImage} alt="Mike Massimino speaking on stage." loading="lazy" class="w-full rounded-2xl object-cover shadow-lg" />
 
-    <div class="z-10 col-span-4 col-start-5 row-span-1 row-start-7 md:col-span-3 md:col-start-2 md:row-start-8 md:max-w-80">
-      <GradientButton link="https://mikemassimino.paperform.co/" text="CONTACT MIKE" />
-    </div>
-    <div class="z-10 col-span-4 col-start-5 row-span-1 row-start-8 md:col-span-3 md:col-start-5 md:row-start-8 md:max-w-80">
-      <OutlinedButton link="/biography" text="FULL BIO" />
+        <a href={highlightedVideo.url} target="_blank" rel="noopener noreferrer" class="group block self-start">
+          <Image src={highlightedVideoImg} alt="Mike answering space questions on Wired." loading="lazy" class="w-full rounded-xl object-cover shadow-md" />
+          <p class="mt-2 font-jost text-sm italic leading-snug text-gray group-hover:text-red">
+            {highlightedVideo.title}
+          </p>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Highlighted video feature card -->
-  <a href={highlightedVideo.url} aria-label="Watch Mike on Wired.">
-    <div class="absolute left-[calc(70%-5rem)] hidden max-w-80 -translate-y-36 rounded-2xl bg-almostwhite p-4 shadow-[0_0_15px_3px_rgba(0,0,0,0.3)] lg:block">
-      <Image src={highlightedVideoImg} alt="Thumbnail of Mike on Wired." loading="lazy" />
-      <h4 class="font-lg text-center font-jost italic">
-        {highlightedVideo.title}
-      </h4>
-    </div>
-  </a>
-
-  <!-- Rocket -->
-  <div class="xl:w-6xl absolute hidden max-w-96 -translate-y-36 lg:block lg:w-[1000px] lg:max-w-none xl:translate-x-40">
-    <RocketAnimated />
-  </div>
+  <div id="insta-trigger" class="h-1"></div>
 
   <!-- Content Cards -->
-  <section class="bg-gradient-to-r from-[#7DCFFF] via-[#2E8FE7] to-[#091E3A] py-8 lg:pt-40">
-    <div class="mx-auto flex max-w-96 flex-col space-y-8 px-5 lg:max-w-none lg:flex-row lg:items-center lg:justify-center lg:space-y-0">
-      <!-- Card 1 -->
-      <div class="lg:order-2 lg:ml-8">
-        <div class="lg:flex lg:flex-col lg:items-center">
-          <!-- Images -->
-          <div class="flex flex-row shadow-lg">
-            <Image src={moonshotCover} alt="Cover of Moonshot." class="w-1/2 rounded-tl-3xl lg:h-auto lg:max-w-[15em]" />
-            <Image src={spacemanCover} alt="Cover of Spaceman." class="w-1/2 rounded-tr-3xl lg:h-auto lg:max-w-[15em]" />
-          </div>
-
-          <!-- Body -->
-          <div class="rounded-b-3xl bg-gradient-to-b from-[#FDBE3D] to-[#E59447] p-4 shadow-lg lg:max-w-[30em]">
-            <h3 class="mb-2 text-center font-jost text-xl font-medium text-white lg:text-3xl">New York Times Bestselling Author</h3>
-            <p class="text-center font-reddit font-light text-dimwhite lg:text-lg">
-              Mike is a New York Times Bestselling author. Check out his books: Moonshot, Spaceman, and Spaceman (Adapted for Young Readers).
-            </p>
-            <a href="/books" class="">
-              <div
-                class="text-md mx-auto mt-4 flex max-w-40 items-center justify-center rounded-2xl bg-blue px-1 py-1 text-center font-reddit font-light text-white md:h-12 md:max-w-56 md:text-xl"
-              >
-                Check out Mike's Books
-              </div>
-            </a>
-          </div>
+  <section class="bg-gradient-to-br from-[#7DCFFF] via-[#2E8FE7] to-[#091E3A] py-14 lg:py-20">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 md:grid-cols-3 lg:px-10">
+      <!-- Books -->
+      <article class="flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b from-[#FDBE3D] to-[#E59447] shadow-lg">
+        <div class="flex aspect-video items-center justify-center gap-3 overflow-hidden bg-gray2 p-4">
+          <Image src={moonshotCover} alt="Cover of Moonshot." loading="lazy" class="max-h-full w-auto rounded-sm shadow-md" />
+          <Image src={spacemanCover} alt="Cover of Spaceman." loading="lazy" class="max-h-full w-auto rounded-sm shadow-md" />
         </div>
-      </div>
-
-      <!-- Cards 2 and 3 -->
-      <div class="space-y-8 lg:order-1 lg:max-w-[40em]">
-        <!-- Card 2 -->
-        <div class="flex flex-row lg:h-60">
-          <!-- Images -->
-          <div class="w-1/2">
-            <Image
-              src={tvMoviesImg}
-              loading="lazy"
-              class="flex aspect-[4/3] h-full rounded-l-3xl object-cover shadow-lg lg:h-60 lg:max-w-[20em]"
-              alt="Mike's cameo on the Big Bang Theory."
-            />
-          </div>
-
-          <!-- Body -->
-          <div class="w-1/2 rounded-r-3xl bg-gradient-to-l from-[#1C1D1E] to-[#0C48A8] p-3 shadow-lg md:pl-6 md:pt-5">
-            <h3 class="mb-2 text-left font-jost text-xl font-medium text-white lg:text-3xl">TV & Movies</h3>
-            <p class="text-left font-reddit font-light text-dimwhite md:pr-4 lg:text-lg">
-              Mike has been featured in many hit shows, including The Big Bang Theory.
-            </p>
-            <a href="/media" class="">
-              <div
-                class="text-md mx-auto mt-4 flex max-w-40 items-center justify-center rounded-2xl bg-gray px-1 py-1 text-center font-reddit font-light text-white md:h-12 md:max-w-56 md:text-xl"
-              >
-                Watch Mike's Features
-              </div>
-            </a>
-          </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-jost text-xl font-medium text-white lg:text-2xl">New York Times Bestselling Author</h3>
+          <p class="mt-2 flex-1 font-reddit font-light text-dimwhite">
+            Mike is a New York Times Bestselling author. Check out his books: Moonshot, Spaceman, and Spaceman (Adapted for Young Readers).
+          </p>
+          <a
+            href="/books"
+            class="mt-5 flex h-11 items-center justify-center rounded-2xl bg-blue px-4 text-center font-reddit font-light text-white hover:bg-gray2"
+          >
+            Check out Mike's Books
+          </a>
         </div>
-        <div class="flex flex-row lg:h-60">
-          <!-- Images -->
-          <div class="w-1/2 lg:h-60">
-            <Image
-              src={frequentGuestImg}
-              loading="lazy"
-              class="flex h-full rounded-l-3xl object-cover shadow-lg lg:h-60 lg:max-w-[20em]"
-              alt="Mike on the television."
-            />
-          </div>
+      </article>
 
-          <!-- Body -->
-          <div class="w-1/2 rounded-r-3xl bg-gradient-to-l from-[#1C1D1E] to-[#0C48A8] p-3 shadow-lg md:pl-6 md:pt-5">
-            <h3 class="mb-2 text-left font-jost text-xl font-medium text-white lg:text-3xl">Frequent Guest</h3>
-            <p class="text-left font-reddit font-light text-dimwhite md:pr-4 lg:text-lg">
-              Mike is a frequent guest and contributor to news programs, late-night TV, podcasts, and more.
-            </p>
-            <a href="/media" class="">
-              <div
-                class="text-md mx-auto mt-4 flex max-w-40 items-center justify-center rounded-2xl bg-gray px-1 py-1 text-center font-reddit font-light text-white md:h-12 md:max-w-56 md:text-xl"
-              >
-                See Mike on TV
-              </div>
-            </a>
-          </div>
+      <!-- TV & Movies -->
+      <article class="flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b from-[#0C48A8] to-[#1C1D1E] shadow-lg">
+        <Image src={tvMoviesImg} loading="lazy" class="aspect-video w-full object-cover" alt="Mike's cameo on The Big Bang Theory." />
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-jost text-xl font-medium text-white lg:text-2xl">TV & Movies</h3>
+          <p class="mt-2 flex-1 font-reddit font-light text-dimwhite">
+            Mike has been featured in many hit shows, including The Big Bang Theory.
+          </p>
+          <a
+            href="/media"
+            class="mt-5 flex h-11 items-center justify-center rounded-2xl bg-gray px-4 text-center font-reddit font-light text-white hover:bg-gray2"
+          >
+            Watch Mike's Features
+          </a>
         </div>
-      </div>
+      </article>
+
+      <!-- Frequent Guest -->
+      <article class="flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b from-[#0C48A8] to-[#1C1D1E] shadow-lg">
+        <Image src={frequentGuestImg} loading="lazy" class="aspect-video w-full object-cover" alt="Mike being interviewed on The Daily Show." />
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-jost text-xl font-medium text-white lg:text-2xl">Frequent Guest</h3>
+          <p class="mt-2 flex-1 font-reddit font-light text-dimwhite">
+            Mike is a frequent guest and contributor to news programs, late-night TV, podcasts, and more.
+          </p>
+          <a
+            href="/media"
+            class="mt-5 flex h-11 items-center justify-center rounded-2xl bg-gray px-4 text-center font-reddit font-light text-white hover:bg-gray2"
+          >
+            See Mike on TV
+          </a>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -219,71 +198,46 @@ import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamw
     </div>
   </div> -->
 
-  <!-- Inspiring Talks Section -->
-  <section class="bg-gradient-to-r from-[#EDF5FF] to-[#D7E6FF]">
-    <div class="space-y-5 px-6 pb-14 pt-5 lg:mx-auto lg:max-w-5xl lg:gap-12 lg:px-16 xl:max-w-6xl xl:pt-8">
-      <!-- Section title -->
-      <h2 class="col-span-full font-exo text-header text-red lg:mb-3 lg:max-w-lg lg:text-5xl lg:leading-tight 2xl:text-5xl 2xl:leading-snug">
-        Inspiring Talks from Space to Earth
-      </h2>
+  <!-- Rocket transition -->
+  <div id="rocket-transition" class="mx-auto hidden max-w-6xl px-10 py-4 lg:block" aria-hidden="true">
+    <RocketAnimated />
+  </div>
 
-      <!-- Text and watch CTA -->
-      <div class="flex items-center lg:pb-6">
-        <div class="font-roboto text-body text-gray lg:pr-12 lg:text-lg lg:leading-snug">
-          {inspiringTalks}
+  <!-- Inspiring Talks Section -->
+  <section class="bg-gradient-to-r from-[#EDF5FF] to-[#D7E6FF] py-14 lg:py-20">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      <!-- Section intro -->
+      <div class="lg:flex lg:items-end lg:justify-between lg:gap-12">
+        <div class="lg:max-w-3xl">
+          <h2 class="font-exo text-header text-red lg:text-5xl lg:leading-tight">Inspiring Talks from Space to Earth</h2>
+          <p class="mt-4 font-roboto text-body leading-relaxed text-gray lg:mt-5 lg:text-lg lg:leading-relaxed">
+            {inspiringTalks}
+          </p>
         </div>
-        <div class="font-light uppercase md:flex-shrink-0">
+        <div class="mt-6 max-w-xs flex-shrink-0 lg:mt-0">
           <OutlinedButton link="/speaking" text="Watch Mike's highlights" />
         </div>
       </div>
 
       <!-- Speaking cards -->
-      <div class="lg:flex lg:flex-row lg:items-center lg:space-x-16 lg:pb-4">
-        <div class="mx-auto flex max-w-96 flex-col">
-          <a href="https://vimeo.com/673764082" rel="noreferrer noopener" target="_blank">
-            <Image src={teamworkHighlightedSpeakingImg} alt="Mike speaking." class="aspect-video rounded-t-2xl object-cover" width={500} />
-          </a>
-          <div class="rounded-b-2xl bg-blue px-5 pb-6">
-            <h3 class="mb-2 mt-4 font-jost text-[20px] text-white">On Teamwork and Leadership</h3>
-            <p class="font-roboto text-body text-white">
-              Individual accomplishments are needed, but the success of the team is most important. In our complex world, not everyone can be good at
-              everything. But by pooling our abilities, we can be good at everything as a team.
-            </p>
-          </div>
-        </div>
-
-        <div class="mx-auto hidden max-w-96 flex-col lg:flex">
-          <a href="https://vimeo.com/996710486" rel="noreferrer noopener" target="_blank">
-            <Image src={resilienceHighlightedSpeakingImg} alt="Mike speaking." class="aspect-video rounded-t-2xl object-cover" width={500} />
-          </a>
-          <div class="rounded-b-2xl bg-blue px-5 pb-6">
-            <h3 class="mb-2 mt-4 font-jost text-[20px] text-white">Resilience in the Face of Adversity</h3>
-            <p class="font-roboto text-body text-white">
-              Sometimes forces out of our control can make moving forward difficult. In spite of our best efforts we often get knocked down repeatedly. But we
-              need to find a way around that next obstacle. Mike encourages audiences: When the odds are against you, do it anyway.
-            </p>
-          </div>
-        </div>
-
-        <div class="mx-auto hidden max-w-96 flex-col lg:flex">
-          <a href="https://vimeo.com/998000697" rel="noreferrer noopener" target="_blank">
-            <Image src={changeHighlightedSpeakingImg} alt="Mike speaking." class="aspect-video rounded-t-2xl object-cover" width={500} />
-          </a>
-          <div class="rounded-b-2xl bg-blue px-5 pb-6">
-            <h3 class="mb-2 mt-4 font-jost text-[20px] text-white">Accepting Organizational & Technological Change</h3>
-            <p class="font-roboto text-body text-white">
-              In today’s spaceships, AI performs many of the decision making tasks previously done by astronauts. But the path getting there was not easy. Mike
-              encourages audiences to embrace new technologies to give them the competitive edge they need in meeting the challenges of a dynamic and uncertain
-              world.
-            </p>
-          </div>
-        </div>
+      <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3 lg:mt-12">
+        {
+          speakingTopics.map((topic) => (
+            <a href={topic.link} rel="noreferrer noopener" target="_blank" class="group flex flex-col overflow-hidden rounded-2xl shadow-lg">
+              <Image src={topic.image} alt={`Mike speaking on ${topic.title}.`} loading="lazy" class="aspect-video w-full object-cover" width={500} />
+              <div class="flex flex-1 flex-col bg-blue px-5 pb-6 pt-4">
+                <h3 class="font-jost text-[20px] text-white group-hover:text-yellow">{topic.title}</h3>
+                <p class="mt-2 font-roboto text-body leading-relaxed text-white">{topic.description}</p>
+              </div>
+            </a>
+          ))
+        }
       </div>
 
       <!-- CTA -->
-      <div class="mt-4 flex flex-col items-center">
-        <h2 class="text-center font-jost text-2xl text-red lg:mb-3 lg:text-3xl">Bring Mike’s Inspiring Stories to Your Event:</h2>
-        <div class="max-w-38 mt-2">
+      <div class="mt-12 flex flex-col items-center">
+        <h3 class="text-center font-jost text-2xl text-red lg:text-3xl">Bring Mike’s Inspiring Stories to Your Event:</h3>
+        <div class="mt-4 w-full max-w-xs">
           <GradientButton link="/speaking" text="SPEAKING INFORMATION" />
         </div>
       </div>
