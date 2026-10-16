@@ -34,6 +34,31 @@ import changeHighlightedSpeakingImg from "../assets/highlighted_speaking/change.
 import resilienceHighlightedSpeakingImg from "../assets/highlighted_speaking/resilience.jpg";
 import teamworkHighlightedSpeakingImg from "../assets/highlighted_speaking/teamwork.jpg";
 
+const findMike = [
+  {
+    title: "New York Times Bestselling Author",
+    description: "Moonshot, Spaceman, and Spaceman adapted for young readers.",
+    cta: "Read the books",
+    link: "/books",
+  },
+  {
+    title: "TV & Movies",
+    description: "A recurring role on The Big Bang Theory, plus features and documentaries.",
+    image: tvMoviesImg,
+    alt: "Mike's cameo on The Big Bang Theory.",
+    cta: "Watch the features",
+    link: "/media",
+  },
+  {
+    title: "Frequent Guest",
+    description: "News programs, late-night, and podcasts — whenever space makes headlines.",
+    image: frequentGuestImg,
+    alt: "Mike being interviewed on The Daily Show.",
+    cta: "See the interviews",
+    link: "/media",
+  },
+];
+
 const speakingTopics = [
   {
     title: "On Teamwork and Leadership",
@@ -130,60 +155,48 @@ const speakingTopics = [
 
   <!-- Content Cards -->
   <section class="bg-gradient-to-br from-[#7DCFFF] via-[#2E8FE7] to-[#091E3A] py-14 lg:py-20">
-    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 md:grid-cols-3 lg:px-10">
-      <!-- Books -->
-      <article class="flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b from-[#FDBE3D] to-[#E59447] shadow-lg">
-        <div class="flex aspect-video items-center justify-center gap-3 overflow-hidden bg-gray2 p-4">
-          <Image src={moonshotCover} alt="Cover of Moonshot." loading="lazy" class="max-h-full w-auto rounded-sm shadow-md" />
-          <Image src={spacemanCover} alt="Cover of Spaceman." loading="lazy" class="max-h-full w-auto rounded-sm shadow-md" />
-        </div>
-        <div class="flex flex-1 flex-col p-5">
-          <h3 class="font-jost text-xl font-medium text-white lg:text-2xl">New York Times Bestselling Author</h3>
-          <p class="mt-2 flex-1 font-reddit font-light text-dimwhite">
-            Mike is a New York Times Bestselling author. Check out his books: Moonshot, Spaceman, and Spaceman (Adapted for Young Readers).
-          </p>
-          <a
-            href="/books"
-            class="mt-5 flex h-11 items-center justify-center rounded-2xl bg-blue px-4 text-center font-reddit font-light text-white hover:bg-gray2"
-          >
-            Check out Mike's Books
-          </a>
-        </div>
-      </article>
-
-      <!-- TV & Movies -->
-      <article class="flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b from-[#0C48A8] to-[#1C1D1E] shadow-lg">
-        <Image src={tvMoviesImg} loading="lazy" class="aspect-video w-full object-cover" alt="Mike's cameo on The Big Bang Theory." />
-        <div class="flex flex-1 flex-col p-5">
-          <h3 class="font-jost text-xl font-medium text-white lg:text-2xl">TV & Movies</h3>
-          <p class="mt-2 flex-1 font-reddit font-light text-dimwhite">
-            Mike has been featured in many hit shows, including The Big Bang Theory.
-          </p>
-          <a
-            href="/media"
-            class="mt-5 flex h-11 items-center justify-center rounded-2xl bg-gray px-4 text-center font-reddit font-light text-white hover:bg-gray2"
-          >
-            Watch Mike's Features
-          </a>
-        </div>
-      </article>
-
-      <!-- Frequent Guest -->
-      <article class="flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b from-[#0C48A8] to-[#1C1D1E] shadow-lg">
-        <Image src={frequentGuestImg} loading="lazy" class="aspect-video w-full object-cover" alt="Mike being interviewed on The Daily Show." />
-        <div class="flex flex-1 flex-col p-5">
-          <h3 class="font-jost text-xl font-medium text-white lg:text-2xl">Frequent Guest</h3>
-          <p class="mt-2 flex-1 font-reddit font-light text-dimwhite">
-            Mike is a frequent guest and contributor to news programs, late-night TV, podcasts, and more.
-          </p>
-          <a
-            href="/media"
-            class="mt-5 flex h-11 items-center justify-center rounded-2xl bg-gray px-4 text-center font-reddit font-light text-white hover:bg-gray2"
-          >
-            See Mike on TV
-          </a>
-        </div>
-      </article>
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      <h2 class="font-exo text-2xl text-white lg:text-3xl">Where to find Mike</h2>
+      <div class="mt-7 grid grid-cols-1 gap-6 md:grid-cols-3 lg:mt-9 lg:gap-7">
+        {
+          findMike.map((card) => (
+            <a
+              href={card.link}
+              class="group relative flex flex-col overflow-hidden rounded-2xl bg-[#E8E9EC] shadow-[0_18px_40px_-16px_rgba(4,16,44,0.65)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_26px_52px_-18px_rgba(4,16,44,0.75)] focus-visible:-translate-y-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow motion-reduce:transform-none motion-reduce:transition-none"
+            >
+              <div class="relative aspect-video overflow-hidden bg-[#D4D7DC]">
+                {card.image ? (
+                  <Image
+                    src={card.image}
+                    alt={card.alt}
+                    loading="lazy"
+                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none"
+                  />
+                ) : (
+                  <div class="flex h-full items-center justify-center gap-3 p-5">
+                    <Image src={moonshotCover} alt="Cover of Moonshot." loading="lazy" class="max-h-full w-auto rounded-[2px] shadow-lg" />
+                    <Image src={spacemanCover} alt="Cover of Spaceman." loading="lazy" class="max-h-full w-auto rounded-[2px] shadow-lg" />
+                  </div>
+                )}
+              </div>
+              {/* Mission-patch stripe: flight-jacket blue, gold, flag red. */}
+              <span aria-hidden="true" class="flex h-[3px] w-full">
+                <span class="w-1/2 bg-[#1F4FA8]" />
+                <span class="w-1/4 bg-yellow" />
+                <span class="w-1/4 bg-red" />
+              </span>
+              <div class="flex flex-1 flex-col p-5 lg:p-6">
+                <h3 class="font-jost text-xl font-medium leading-snug text-[#0B1E45] lg:text-[1.375rem]">{card.title}</h3>
+                <p class="mt-2 flex-1 font-reddit text-[15px] font-light leading-relaxed text-gray">{card.description}</p>
+                <span class="mt-5 inline-flex items-center gap-2 font-reddit text-[15px] font-medium text-[#1F4FA8]">
+                  {card.cta}
+                  <span class="transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none">&rarr;</span>
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
     </div>
   </section>
 
